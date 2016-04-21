@@ -11,7 +11,4 @@
 @interface YYMessageViewController : UIViewController
 
 
-
-
-
 @end
