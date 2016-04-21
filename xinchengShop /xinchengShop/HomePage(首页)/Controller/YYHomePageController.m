@@ -69,8 +69,6 @@
 
 - (void)initNavigation {
     
-测试使用
-    
     UIView *barView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 44)];
     barView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"NavBar64"]];
     self.navigationItem.titleView = barView;
