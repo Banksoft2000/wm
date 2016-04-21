@@ -1,0 +1,142 @@
+//
+//  QQershouApi.pch
+//  qqershou
+//
+//  Created by harry_robin on 15/11/20.
+//  Copyright © 2015年 banksoft. All rights reserved.
+//
+
+
+#ifndef QQershouApi_pch
+#define QQershouApi_pch
+#endif
+
+#define LOGIN_URL @"/login.asp"
+
+
+#define SCREEN_WIDTH    ([[UIScreen mainScreen] bounds].size.width)
+
+#define SCREEN_HEIGHT   ([[UIScreen mainScreen] bounds].size.height)
+
+#ifdef __OBJC__
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#import "UIView+Extension.h"
+//#import "UIBarButtonItem+Extension.h"
+//#import "UIWindow+Extension.h"
+//#import "NSDate+Extension.h"
+//#import "NSString+Extension.h"
+//#import "NSString+Emoji.h"
+//#import "UITextView+Extension.h"
+
+
+
+#pragma mark - CX
+#import "YYBaseTableView.h"
+#import <AFNetworking.h>
+#import "BaseModel.h"
+#import "UIImageView+WebCache.h"
+#import "UIView+Extension.h"
+#import "UIView+UIViewController.h"
+#import "Masonry.h"
+#import "MJRefresh.h"
+#import "YYNetWorking.h"
+#import "FMDatabase.h"
+#import "Custom+UIColor.h"
+
+#import <MBProgressHUD.h>
+
+#pragma mark - FMDB---YYMyData.m
+//key 值
+#define SHOP_ID         @"shopId"
+#define SHOP_NAME       @"shopName"
+#define SHOP_IMG        @"shopImg"
+#define PRODUCT_ID      @"productId"
+#define IDS             @"ids"
+#define PRICE           @"price"
+#define STOCK           @"stock"
+#define NUMBER          @"number"
+#define STAIC           @"staic"
+#define ICON            @"icon"
+#define NAME            @"name"
+#define SHOPNO          @"shopNo"
+#define ACTIVE          @"active"
+#define AREANO_SHOP     @"areaNo"
+
+#define TOTAL           @"total"
+
+//key 值-------收货地址
+#define NAME_ADRESS     @"userName"
+#define ADRESS          @"detail"
+#define PHONE           @"telephone"
+#define DEFAULT_ADRESS  @"status"
+#define POSTCODE        @"postcode"
+#define DETAIL_ADDRESS  @"address"
+
+#define PROVINCE        @"province"
+#define CITY            @"city"
+#define COUNTY          @"county"
+#define MEMBERID        @"memberId"
+
+
+//收货地址存储的时候使用----需要传入用户的会员id--在后期需要修改
+#define MEMBERID_VALUE  @"727a26e07209404a979f76095f6d987e"
+
+//颜色
+//字体颜色
+#define PRICE_TEXT_RED      [UIColor colorWithHexString:@"#e5292d" alpha:1]
+//删除--红---navigation的红色
+#define SHOPPING_DELETE_BG  [UIColor colorWithHexString:@"#cb3944" alpha:1]
+//button----橘黄
+#define UIBUTTON_ORANGE     [UIColor colorWithHexString:@"#ff6a22" alpha:1]
+//背影灰
+#define BG_GRAY             [UIColor colorWithHexString:@"#d1d1d1" alpha:1]
+
+//color name="bg_gray_light">#fff8f8f8</color>
+#define LIGHT_GRAY          [UIColor colorWithHexString:@"#f8f8f8" alpha:1]
+
+
+//默认图片
+#define DEFA_IMAGE          [UIImage imageNamed:@"default_picture_icon"]
+
+//FONT
+#define TEXT_FONT           [UIFont systemFontOfSize:13]
+#define TITLE_FONT          [UIFont systemFontOfSize:13]
+#define TITLE_FIF_FONT      [UIFont systemFontOfSize:15]
+#define BUTTON_FONT         [UIFont systemFontOfSize:17]
+
+
+
+#define BASE_URL @"http://xinchengguangchang.com"
+// 随机色
+#define ARCOLOR HWColor(arc4random_uniform(256), arc4random_uniform(256), arc4random_uniform(256))
+#define MYGRAYCOLOR [UIColor colorWithRed:220/255.f green:220/255.f blue:220/255.f alpha:1]
+#define USER_D [NSUserDefaults standardUserDefaults]
+
+
+
+#pragma mark - CX
+
+
+
+
+#define iOS7 ([[UIDevice currentDevice].systemVersion doubleValue] >= 7.0)
+
+// 通知中心
+#define HWNotificationCenter [NSNotificationCenter defaultCenter]
+
+#ifdef DEBUG // 处于开发阶段
+#define HWLog(...) NSLog(__VA_ARGS__)
+#else // 处于发布阶段
+#define HWLog(...)
+#endif
+
+// RGB颜色
+#define HWColor(r, g, b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0]
+
+// 随机色
+#define HWRandomColor HWColor(arc4random_uniform(256), arc4random_uniform(256), arc4random_uniform(256))
+
+
+
+#endif /* QQershouApi_pch */

@@ -1,0 +1,25 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "ac470e27-ef7c-dd4a-825a-c924ac8410b6",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+    "ac470e27-ef7c-dd4a-825a-c924ac8410b6" : {
+
+    }
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "ac470e27-ef7c-dd4a-825a-c924ac8410b6" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "E2705362-5FF8-4BC8-9EDF-76C7BD2A2701",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "ac470e27-ef7c-dd4a-825a-c924ac8410b6" : "mac\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "xinchengShop",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "xinchengShop\/xinchengShop.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/192.168.1.250:8443\/svn\/mac",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "ac470e27-ef7c-dd4a-825a-c924ac8410b6"
+    }
+  ]
+}
