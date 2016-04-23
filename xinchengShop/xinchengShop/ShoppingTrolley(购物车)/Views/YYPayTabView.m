@@ -295,7 +295,7 @@
     sender.selected = YES;
     
     YYDistributionModel *model = _distriData[sender.tag - 4400];
-    _distriStr = [NSString stringWithFormat:@"%@ %ld",model.name,model.price];
+    _distriStr = [NSString stringWithFormat:@"%@ %d",model.name,model.price];
 }
 
 #pragma mark - UITextFieldDelegate
@@ -627,7 +627,7 @@
     UILabel *number = [[UILabel alloc] init];
     [view addSubview:number];
     
-    number.text = [NSString stringWithFormat:@"共%ld件商品",product.count];
+    number.text = [NSString stringWithFormat:@"共%d件商品",product.count];
     number.font = TEXT_FONT;
     number.textAlignment = NSTextAlignmentRight;
     [number mas_makeConstraints:^(MASConstraintMaker *make) {

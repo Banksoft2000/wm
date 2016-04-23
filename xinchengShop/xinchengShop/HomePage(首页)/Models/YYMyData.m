@@ -33,8 +33,10 @@
      *  @param TEXT          shopNo     店铺NO
      *  @param TEXT          active     活动
      *  @param TEXT          areaNO     地区编号
+     *  @param TEXT          active     standardIds        属性的 id 拼接的字符串
+     *  @param TEXT          areaNO     standardValues     属性对用的文字
      */
-    NSString *createDetailSql = @"create table if not exists product_table(id INTEGER PRIMARY KEY AUTOINCREMENT,shopId TEXT, shopName TEXT,shopImg TEXT,productId TEXT,ids TEXT,price TEXT,stock TEXT, number TEXT,staic TEXT,icon TEXT,name TEXT,shopNo TEXT,active TEXT,areaNo TEXT)";
+    NSString *createDetailSql = @"create table if not exists product_table(id INTEGER PRIMARY KEY AUTOINCREMENT,shopId TEXT, shopName TEXT,shopImg TEXT,productId TEXT,ids TEXT,price TEXT,stock TEXT, number TEXT,staic TEXT,icon TEXT,name TEXT,shopNo TEXT,active TEXT,areaNo TEXT,standardIds TEXT,standardValues TEXT)";
     
     //执行sql语句
     res = [db executeUpdate:createDetailSql];
@@ -54,7 +56,7 @@
     FMDatabase *db = [self inflateDB];
     BOOL res = [db open];
     
-    NSString *insertDetailSql = @"insert into product_table(shopId, shopName,shopImg,productId,ids,price,stock,number,staic,icon,name,shopNo,active,areaNo) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+    NSString *insertDetailSql = @"insert into product_table(shopId, shopName,shopImg,productId,ids,price,stock,number,staic,icon,name,shopNo,active,areaNo,standardIds,standardValues) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
     
     if (res) {
         
@@ -72,6 +74,8 @@
         NSString *shopNo = dic[SHOPNO];
         NSString *active = dic[ACTIVE];
         NSString *areaNo = dic[AREANO_SHOP];
+        NSString *standIds = dic[STAND_IDS];
+        NSString *standValues = dic[STAND_VALUES];
         
         //查找数据
         FMResultSet *set = [db executeQuery:@"SELECT * FROM product_table  WHERE SHOPID=? AND PRODUCTID=? AND STAIC=?",shopId,productId,staic];
@@ -103,7 +107,7 @@
         //如果不存在就添加一个新的数据
         if (isData == NO) {
             
-            [db executeUpdate:insertDetailSql,shopId,shopName,shopImg,productId,ids,price,stock,number,staic,icon,name,shopNo,active,areaNo];
+            [db executeUpdate:insertDetailSql,shopId,shopName,shopImg,productId,ids,price,stock,number,staic,icon,name,shopNo,active,areaNo,standIds,standValues];
     
         }
     }
@@ -145,6 +149,8 @@
             productDic[SHOPNO]      = [set stringForColumn:SHOPNO];
             productDic[ACTIVE]      = [set stringForColumn:ACTIVE];
             productDic[AREANO_SHOP] = [set stringForColumn:AREANO_SHOP];
+            productDic[STAND_IDS]   = [set stringForColumn:STAND_IDS];
+            productDic[STAND_VALUES]= [set stringForColumn:STAND_VALUES];
             
             //判断是否为空
             if (shopArr.count < 1) {

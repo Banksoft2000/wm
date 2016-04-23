@@ -11,7 +11,7 @@
 #import "YYGuideController.h"
 
 #import "UMSocial.h"
-
+#import "WXApi.h"
 
 #import "UMSocialQQHandler.h"
 #import "UMSocialSinaHandler.h"
@@ -38,13 +38,10 @@
     
     
     [UMSocialData  setAppKey: @"4230626533"];
-    
-    
-    
+
     //qq登录
      [UMSocialQQHandler setQQWithAppId:@"1105307832" appKey:@"xWkj29O3F5OAZOll" url:@"http://www.umeng.com/social"];
-    
-    
+ 
     //微博登录
     [UMSocialSinaHandler openSSOWithRedirectURL:@"http://sns.whalecloud.com/sina2/callback"];
     
@@ -53,9 +50,84 @@
     //微信登录
     [UMSocialWechatHandler setWXAppId:@"wxe4d53f58f26cd989" appSecret:@"9a5eaf0585b6bb69462d2c7e17dbfd7a" url:@"http://www.umeng.com/social"];
     
+    //向微信注册
+    [WXApi registerApp:@"wxe4d53f58f26cd989" withDescription:@""];
     
     return YES;
 }
+
+//支付的界面跳转
+- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
+    NSLog(@"1url = %@   [url host] = %@",url,[url host]);
+    
+    if(url != nil && [[url host] isEqualToString:@"pay"]){
+        //微信支付
+        NSLog(@"微信支付");
+        return [WXApi handleOpenURL:url delegate:self];
+    }
+    else{
+        //其他
+        return YES;
+    }
+    
+    return YES;
+}
+
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
+{
+    NSLog(@"2url = %@   [url host] = %@",url,[url host]);
+    
+    if(url != nil && [[url host] isEqualToString:@"pay"]){//微信支付
+        
+        NSLog(@"微信支付");
+        return [WXApi handleOpenURL:url delegate:self];
+    }
+    else{//其他
+        return YES;
+    }
+}
+//收到一个来自微信的处理结果。调用一次sendReq后会收到onResp。
+- (void)onResp:(BaseResp *)resp
+{
+    if ([resp isKindOfClass:[PayResp class]])
+    {
+        
+#warning 支付结果处理
+        PayResp *response = (PayResp *)resp;
+        
+        //        NSLog(@"支付结果 %d===%@",response.errCode,response.errStr);
+        
+        switch (response.errCode) {
+            case WXSuccess: {
+                
+                NSLog(@"支付成功");
+                
+                //...支付成功相应的处理，跳转界面等
+                
+                break;
+            }
+            case WXErrCodeUserCancel: {
+                
+                NSLog(@"用户取消支付");
+                
+                //...支付取消相应的处理
+                
+                break;
+            }
+            default: {
+                
+                NSLog(@"支付失败");
+                
+                //...做相应的处理，重新支付或删除支付
+                
+                break;
+            }
+        }
+    }
+    
+}
+
+
 
 #pragma mark 以下两个方法用于处理应用间跳转的
 

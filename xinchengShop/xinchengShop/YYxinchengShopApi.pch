@@ -63,8 +63,11 @@
 #define SHOPNO          @"shopNo"
 #define ACTIVE          @"active"
 #define AREANO_SHOP     @"areaNo"
-
-#define TOTAL           @"total"
+#define TOTAL           @"total"              //总价格
+#define STAND_IDS       @"standardIds"        //属性的ids
+#define STAND_VALUES    @"standardValues"     //属性 （汉字）
+#define STAND_KEYS      @"standardKeys"       //ids-------ids
+#define STAND_NAMES     @"standardNames"      //白色|XXL---staic
 
 //key 值-------收货地址
 #define NAME_ADRESS     @"userName"

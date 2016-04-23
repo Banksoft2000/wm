@@ -8,8 +8,6 @@
 
 #import "YYBuyView.h"
 
-
-
 static int i = 1;                           //购买数量
 static int standNUm = 1500;                 //规格的种类
 static NSMutableString *staicText = nil;    //显示状态的数据
@@ -76,7 +74,7 @@ static NSString *otherText = nil;    //其他数据
     
     _priceArr = priceArr;
  
-    //转载文字----staic文字
+    //装载文字----staic文字
     _allText = [[NSMutableArray alloc] init];
     //装载id ------priceModel 需要的id
     _allID = [[NSMutableArray alloc] init];
@@ -134,9 +132,9 @@ static NSString *otherText = nil;    //其他数据
         [_productDic setObject:_sale.text forKey:@"stock"];
         [_productDic setObject:buyNumber forKey:@"number"];
         [_productDic setObject:_staic.text forKey:@"staic"];
-        
+   
     }
-
+    
     [self initStandardView];
     
     [self.buyDelegate productDetail:_productDic];

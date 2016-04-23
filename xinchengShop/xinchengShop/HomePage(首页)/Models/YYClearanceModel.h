@@ -14,8 +14,6 @@
 
 //---------------甩卖---精品热卖-------
 
-
-
 @property (nonatomic, copy) NSString *icon;
 
 @property (nonatomic, copy) NSString *id;

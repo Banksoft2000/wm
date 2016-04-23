@@ -33,7 +33,6 @@
     
     if (_payTabView) {
         
-//        [self initData];
         [_payTabView reloadData];
     }
     
@@ -62,44 +61,10 @@
     
     [self initTableView];
     [self initDownView];
-//    [self initData];
     [self initAddressData];
     
 }
-/*
-#pragma mark - 获取数据
-- (void)initData {
-    
-    YYMyData *data = [[YYMyData alloc] init];
-    
-    _productArr = [[NSMutableArray alloc] init];
-    _shopArr = [[NSMutableArray alloc] init];
-    
-    NSArray *dataArr =[data getData];
-    
-    for (NSArray *productArr in dataArr) {
-        
-        //productArr----店铺
-        //dic ---- 产品
-        for (NSDictionary *dic in productArr) {
-            
-            YYShoppingModel *model = [[YYShoppingModel alloc] initWithDictionary:dic];
-            
-            [_productArr addObject:model];
-            
-        }
-        //数据
-        [_shopArr addObject:_productArr];
-        
-    }
-    
-    if (_payTabView) {
-        
-        _payTabView.dataArr = _shopArr;
-        [_payTabView reloadData];
-    }
-}
-*/
+
 - (void)setShopArr:(NSMutableArray *)shopArr {
     
     _shopArr = shopArr;
@@ -121,6 +86,7 @@
     
 }
 
+#pragma mark - 获取地址
 - (void)initAddressData {
     
     NSMutableArray *addressArr = [[NSMutableArray alloc] init];
@@ -153,9 +119,7 @@
         }
     
     }];
-    
-
-    
+  
 }
 
 - (void)initDownView {
@@ -206,6 +170,73 @@
 
     [self.navigationController pushViewController:pay animated:YES];
     
+   
+   
+    
+    
+    
+    /*
+     productId = 6b671003aae245799556f0400602eedd;
+     shopId = f066a2d199d54db9b5d08a6cda4ba0ff;
+     shopNO = "<null>";
+     name = "\U8001\U738b\U724c\U7fbd\U7ed2\U670d";
+     price = "-5764607523034215483";
+     number = 1;
+     icon = "/upload/20151126/1448528532765.jpg";
+ //总价格 自己算
+     total = number * price
+     active = 0;
+     
+     standardIds = 526684857afe47e7997a078cc219184c|c99fe3794e7e44a2b8961cfe2a79ec24
+     standardValues = 颜色|尺码
+     
+     
+     areaNo = "";
+     ids = "862b70e5faaa4c269f4b3f176a26cdf5|cd0db57780ad4517ab3e2f9b15b694dd";
+     
+     shopImg = "";
+     shopName = "\U9047\U89c1";
+     
+     staic = "\U7eff\U8272 L";
+     stock = "-5764607523034215483";
+     standardKeys = 1ff80f47e8a44df6ae0d575c7f04e3fc|cd0db57780ad4517ab3e2f9b15b694dd
+     */
+    
+    /*
+     
+     private String productId;1
+     private String shopId;1
+     private String shopNo;1
+     private String productName;
+     private float price;
+     private int goodsNum;
+     private String imageFile;
+     private float total;
+     private String active; //商品类型 0  1 清仓 2 团购
+     
+     private String standardIds;-------颜色或者尺码   属性的ids
+     private String standardValues;----属性的    汉字
+     private String standardKeys;------ids白色和xl
+     private String standardNames;-----ids里面的value
+     private String standardValNames;
+     
+     private String cardId;
+     private String id;
+     
+     */
+    
+    
+#warning CanXue - create order
+    
+//    NSString *price = [NSString stringWithFormat:@"%@%@",BASE_URL,];
+//    
+//    NSString *urlStr = [NSString stringWithFormat:@"%@/app/standard_findProductStandard?productId=%@",BASE_URL,_url];
+//    
+//    NSString *url = [NSString stringWithFormat:@"%@%@",BASE_URL,@"/app/_createMemberOrder"];
+    
+    
+    
+    
 }
 
 - (void)initTableView {
@@ -216,10 +247,6 @@
     [self.view addSubview:_payTabView];
     
 }
-
-
-
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

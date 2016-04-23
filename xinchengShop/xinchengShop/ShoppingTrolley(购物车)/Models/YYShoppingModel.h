@@ -50,8 +50,18 @@ dataList[0].total=3488.0&&
 @property (nonatomic, copy) NSString *ids;
 
 
-
+//状态------白色 ll
 @property (nonatomic, copy) NSString *staic;
+
+// list 里面的 id 使用 | 连接起来
+@property (nonatomic, copy) NSString *standardIds;
+//id 对用的 name
+@property (nonatomic, copy) NSString *standardValues;
+//ids
+//@property (nonatomic, copy) NSString *standardKeys;
+//// ids 对应的属性（汉字）
+//@property (nonatomic, copy) NSString *standardNames;
+
 //库存
 @property (nonatomic, copy) NSString *stock;
 

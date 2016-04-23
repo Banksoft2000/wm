@@ -11,7 +11,6 @@
 #import "YYImageModel.h"
 #import "YYTextModel.h"
 #import "YYPriceModel.h"
-//#import "YYStandCollectionView.m"
 #import "YYStandColl.h"
 
 

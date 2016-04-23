@@ -214,7 +214,6 @@
 		74C269E01CC9B9F30062DA96 /* YYPayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74C269931CC9B9F30062DA96 /* YYPayViewController.m */; };
 		74C269E11CC9B9F30062DA96 /* YYSelectAddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74C269951CC9B9F30062DA96 /* YYSelectAddViewController.m */; };
 		74C269E21CC9B9F30062DA96 /* YYShoppingController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74C269971CC9B9F30062DA96 /* YYShoppingController.m */; };
-		74C269E31CC9B9F30062DA96 /* YYShowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74C269991CC9B9F30062DA96 /* YYShowViewController.m */; };
 		74C269E41CC9B9F30062DA96 /* china.xml in Resources */ = {isa = PBXBuildFile; fileRef = 74C2699B1CC9B9F30062DA96 /* china.xml */; };
 		74C269E51CC9B9F30062DA96 /* Custom+UIColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 74C2699D1CC9B9F30062DA96 /* Custom+UIColor.m */; };
 		74C269E61CC9B9F30062DA96 /* YYAddressData.m in Sources */ = {isa = PBXBuildFile; fileRef = 74C2699F1CC9B9F30062DA96 /* YYAddressData.m */; };
@@ -257,6 +256,13 @@
 		74C26A0B1CC9B9F30062DA96 /* YYShoppingDownView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74C269D41CC9B9F30062DA96 /* YYShoppingDownView.xib */; };
 		74C26A0C1CC9B9F30062DA96 /* YYShoppingTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 74C269D61CC9B9F30062DA96 /* YYShoppingTableViewCell.m */; };
 		74C26A0D1CC9B9F30062DA96 /* YYShoppingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74C269D71CC9B9F30062DA96 /* YYShoppingTableViewCell.xib */; };
+		74C26A161CC9C7CC0062DA96 /* alipay_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 74C26A151CC9C7CC0062DA96 /* alipay_icon.png */; };
+		74C26A1C1CC9ECCD0062DA96 /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 74C26A181CC9ECCD0062DA96 /* libWeChatSDK.a */; };
+		74C26A1F1CC9F5330062DA96 /* lhSharePay.m in Sources */ = {isa = PBXBuildFile; fileRef = 74C26A1E1CC9F5330062DA96 /* lhSharePay.m */; };
+		74C26A231CC9F54F0062DA96 /* WeChatPayManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 74C26A221CC9F54F0062DA96 /* WeChatPayManager.m */; };
+		74C26A261CC9F67F0062DA96 /* WXUtil.mm in Sources */ = {isa = PBXBuildFile; fileRef = 74C26A251CC9F67F0062DA96 /* WXUtil.mm */; };
+		74C26A291CC9F69F0062DA96 /* ApiXml.mm in Sources */ = {isa = PBXBuildFile; fileRef = 74C26A281CC9F69F0062DA96 /* ApiXml.mm */; };
+		74C26A2C1CC9F6BF0062DA96 /* lhMyConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 74C26A2B1CC9F6BF0062DA96 /* lhMyConnection.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -631,8 +637,6 @@
 		74C269951CC9B9F30062DA96 /* YYSelectAddViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYSelectAddViewController.m; sourceTree = "<group>"; };
 		74C269961CC9B9F30062DA96 /* YYShoppingController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYShoppingController.h; sourceTree = "<group>"; };
 		74C269971CC9B9F30062DA96 /* YYShoppingController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYShoppingController.m; sourceTree = "<group>"; };
-		74C269981CC9B9F30062DA96 /* YYShowViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYShowViewController.h; sourceTree = "<group>"; };
-		74C269991CC9B9F30062DA96 /* YYShowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYShowViewController.m; sourceTree = "<group>"; };
 		74C2699B1CC9B9F30062DA96 /* china.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = china.xml; sourceTree = "<group>"; };
 		74C2699C1CC9B9F30062DA96 /* Custom+UIColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Custom+UIColor.h"; sourceTree = "<group>"; };
 		74C2699D1CC9B9F30062DA96 /* Custom+UIColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Custom+UIColor.m"; sourceTree = "<group>"; };
@@ -692,6 +696,21 @@
 		74C269D51CC9B9F30062DA96 /* YYShoppingTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYShoppingTableViewCell.h; sourceTree = "<group>"; };
 		74C269D61CC9B9F30062DA96 /* YYShoppingTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYShoppingTableViewCell.m; sourceTree = "<group>"; };
 		74C269D71CC9B9F30062DA96 /* YYShoppingTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YYShoppingTableViewCell.xib; sourceTree = "<group>"; };
+		74C26A151CC9C7CC0062DA96 /* alipay_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = alipay_icon.png; sourceTree = "<group>"; };
+		74C26A181CC9ECCD0062DA96 /* libWeChatSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeChatSDK.a; sourceTree = "<group>"; };
+		74C26A191CC9ECCD0062DA96 /* WechatAuthSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WechatAuthSDK.h; sourceTree = "<group>"; };
+		74C26A1A1CC9ECCD0062DA96 /* WXApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApi.h; sourceTree = "<group>"; };
+		74C26A1B1CC9ECCD0062DA96 /* WXApiObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiObject.h; sourceTree = "<group>"; };
+		74C26A1D1CC9F5330062DA96 /* lhSharePay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lhSharePay.h; sourceTree = "<group>"; };
+		74C26A1E1CC9F5330062DA96 /* lhSharePay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = lhSharePay.m; sourceTree = "<group>"; };
+		74C26A211CC9F54F0062DA96 /* WeChatPayManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeChatPayManager.h; sourceTree = "<group>"; };
+		74C26A221CC9F54F0062DA96 /* WeChatPayManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeChatPayManager.m; sourceTree = "<group>"; };
+		74C26A241CC9F67F0062DA96 /* WXUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXUtil.h; sourceTree = "<group>"; };
+		74C26A251CC9F67F0062DA96 /* WXUtil.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = WXUtil.mm; sourceTree = "<group>"; };
+		74C26A271CC9F69F0062DA96 /* ApiXml.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApiXml.h; sourceTree = "<group>"; };
+		74C26A281CC9F69F0062DA96 /* ApiXml.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ApiXml.mm; sourceTree = "<group>"; };
+		74C26A2A1CC9F6BF0062DA96 /* lhMyConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lhMyConnection.h; sourceTree = "<group>"; };
+		74C26A2B1CC9F6BF0062DA96 /* lhMyConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = lhMyConnection.m; sourceTree = "<group>"; };
 		B0CE8A12F8CC64F2F629F9F7 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		CD15E334FC7243AFC8874877 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -703,6 +722,7 @@
 			files = (
 				7418E6051CB8FAB3005F5A74 /* libSocialQQ.a in Frameworks */,
 				109CE6781CAFC30E003D0172 /* libz.tbd in Frameworks */,
+				74C26A1C1CC9ECCD0062DA96 /* libWeChatSDK.a in Frameworks */,
 				109CE6761CAFC2FE003D0172 /* libstdc++.tbd in Frameworks */,
 				7418E6091CB8FAB3005F5A74 /* libUMSocial_Sdk_4.2.3.a in Frameworks */,
 				7418E6041CB8FAB3005F5A74 /* libSocialSina.a in Frameworks */,
@@ -1046,9 +1066,13 @@
 		10CD32AE1CA0CE5800D8A062 /* xinchengShop */ = {
 			isa = PBXGroup;
 			children = (
-				74C269821CC9B9F30062DA96 /* ShoppingTrolley(购物车) */,
-				74C268B71CC9B94A0062DA96 /* HomePage(首页) */,
+				74C26A181CC9ECCD0062DA96 /* libWeChatSDK.a */,
+				74C26A191CC9ECCD0062DA96 /* WechatAuthSDK.h */,
+				74C26A1A1CC9ECCD0062DA96 /* WXApi.h */,
+				74C26A1B1CC9ECCD0062DA96 /* WXApiObject.h */,
 				74E58B0B1CB0AB3900895F6D /* Umeng */,
+				74C268B71CC9B94A0062DA96 /* HomePage(首页) */,
+				74C269821CC9B9F30062DA96 /* ShoppingTrolley(购物车) */,
 				10CD32E71CA0D7A100D8A062 /* Guide(新特性) */,
 				10CD32E21CA0D7A100D8A062 /* Discovery(发现) */,
 				10CD32F81CA0D7B300D8A062 /* Mine(我的) */,
@@ -1495,20 +1519,17 @@
 		74C268B81CC9B94A0062DA96 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				74C268B91CC9B94A0062DA96 /* YYCarouseViewController.h */,
-				74C268BA1CC9B94A0062DA96 /* YYCarouseViewController.m */,
-				74C268BB1CC9B94A0062DA96 /* YYDetailImgViewController.h */,
-				74C268BC1CC9B94A0062DA96 /* YYDetailImgViewController.m */,
-				74C268BD1CC9B94A0062DA96 /* YYDetailViewController.h */,
-				74C268BE1CC9B94A0062DA96 /* YYDetailViewController.m */,
 				74C268BF1CC9B94A0062DA96 /* YYHomePageController.h */,
 				74C268C01CC9B94A0062DA96 /* YYHomePageController.m */,
-				74C268C11CC9B94A0062DA96 /* YYMessageViewController.h */,
-				74C268C21CC9B94A0062DA96 /* YYMessageViewController.m */,
-				74C268C31CC9B94A0062DA96 /* YYSeachViewController.h */,
-				74C268C41CC9B94A0062DA96 /* YYSeachViewController.m */,
 				74C268C51CC9B94A0062DA96 /* YYXCViewController.h */,
 				74C268C61CC9B94A0062DA96 /* YYXCViewController.m */,
+				74C268BD1CC9B94A0062DA96 /* YYDetailViewController.h */,
+				74C268BE1CC9B94A0062DA96 /* YYDetailViewController.m */,
+				74C268BB1CC9B94A0062DA96 /* YYDetailImgViewController.h */,
+				74C268BC1CC9B94A0062DA96 /* YYDetailImgViewController.m */,
+				74C268B91CC9B94A0062DA96 /* YYCarouseViewController.h */,
+				74C268BA1CC9B94A0062DA96 /* YYCarouseViewController.m */,
+				74C26A331CCA159A0062DA96 /* Message */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1516,12 +1537,8 @@
 		74C268C71CC9B94A0062DA96 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				74C268C81CC9B94A0062DA96 /* BaseModel.h */,
-				74C268C91CC9B94A0062DA96 /* BaseModel.m */,
-				74C268CA1CC9B94A0062DA96 /* SegmentView.h */,
-				74C268CB1CC9B94A0062DA96 /* SegmentView.m */,
-				74C268CC1CC9B94A0062DA96 /* UIView+UIViewController.h */,
-				74C268CD1CC9B94A0062DA96 /* UIView+UIViewController.m */,
+				74C26A321CCA0A8D0062DA96 /* PriceModel */,
+				74C26A311CCA0A630062DA96 /* Base */,
 				74C268CE1CC9B94A0062DA96 /* YYCarouselModel.h */,
 				74C268CF1CC9B94A0062DA96 /* YYCarouselModel.m */,
 				74C268D01CC9B94A0062DA96 /* YYClearanceModel.h */,
@@ -1530,22 +1547,8 @@
 				74C268D31CC9B94A0062DA96 /* YYCXHomeModel.m */,
 				74C268D41CC9B94A0062DA96 /* YYDetailModel.h */,
 				74C268D51CC9B94A0062DA96 /* YYDetailModel.m */,
-				74C268D61CC9B94A0062DA96 /* YYHttpRequest.h */,
-				74C268D71CC9B94A0062DA96 /* YYHttpRequest.m */,
-				74C268D81CC9B94A0062DA96 /* YYImageModel.h */,
-				74C268D91CC9B94A0062DA96 /* YYImageModel.m */,
-				74C268DA1CC9B94A0062DA96 /* YYMyData.h */,
-				74C268DB1CC9B94A0062DA96 /* YYMyData.m */,
-				74C268DC1CC9B94A0062DA96 /* YYNetWorking.h */,
-				74C268DD1CC9B94A0062DA96 /* YYNetWorking.m */,
 				74C268DE1CC9B94A0062DA96 /* YYNoticeModel.h */,
 				74C268DF1CC9B94A0062DA96 /* YYNoticeModel.m */,
-				74C268E01CC9B94A0062DA96 /* YYPriceModel.h */,
-				74C268E11CC9B94A0062DA96 /* YYPriceModel.m */,
-				74C268E21CC9B94A0062DA96 /* YYStandardModel.h */,
-				74C268E31CC9B94A0062DA96 /* YYStandardModel.m */,
-				74C268E41CC9B94A0062DA96 /* YYTextModel.h */,
-				74C268E51CC9B94A0062DA96 /* YYTextModel.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1592,45 +1595,12 @@
 		74C269071CC9B94A0062DA96 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				74C269081CC9B94A0062DA96 /* PhotoScrollView.h */,
-				74C269091CC9B94A0062DA96 /* PhotoScrollView.m */,
 				74C2690A1CC9B94A0062DA96 /* YYBaseTableView.h */,
 				74C2690B1CC9B94A0062DA96 /* YYBaseTableView.m */,
-				74C2690C1CC9B94A0062DA96 /* YYBuyView.h */,
-				74C2690D1CC9B94A0062DA96 /* YYBuyView.m */,
-				74C2690E1CC9B94A0062DA96 /* YYBuyView.xib */,
-				74C2690F1CC9B94A0062DA96 /* YYCollectionViewCell.h */,
-				74C269101CC9B94A0062DA96 /* YYCollectionViewCell.m */,
-				74C269111CC9B94A0062DA96 /* YYCollectionViewCell.xib */,
-				74C269121CC9B94A0062DA96 /* YYDetailDownView.h */,
-				74C269131CC9B94A0062DA96 /* YYDetailDownView.m */,
-				74C269141CC9B94A0062DA96 /* YYDetailDownView.xib */,
-				74C269151CC9B94A0062DA96 /* YYDetailHeadView.h */,
-				74C269161CC9B94A0062DA96 /* YYDetailHeadView.m */,
-				74C269171CC9B94A0062DA96 /* YYDetailOneView.h */,
-				74C269181CC9B94A0062DA96 /* YYDetailOneView.m */,
-				74C269191CC9B94A0062DA96 /* YYDetailOneView.xib */,
-				74C2691A1CC9B94A0062DA96 /* YYDetailTableView.h */,
-				74C2691B1CC9B94A0062DA96 /* YYDetailTableView.m */,
-				74C2691C1CC9B94A0062DA96 /* YYDetailTwoView.h */,
-				74C2691D1CC9B94A0062DA96 /* YYDetailTwoView.m */,
-				74C2691E1CC9B94A0062DA96 /* YYDetailZeroView.h */,
-				74C2691F1CC9B94A0062DA96 /* YYDetailZeroView.m */,
-				74C269201CC9B94A0062DA96 /* YYDetailZeroView.xib */,
-				74C269211CC9B94A0062DA96 /* YYHeaderView.h */,
-				74C269221CC9B94A0062DA96 /* YYHeaderView.m */,
-				74C269231CC9B94A0062DA96 /* YYHomeCollectionView.h */,
-				74C269241CC9B94A0062DA96 /* YYHomeCollectionView.m */,
-				74C269251CC9B94A0062DA96 /* YYHomePage.storyboard */,
-				74C269261CC9B94A0062DA96 /* YYHomeTableView.h */,
-				74C269271CC9B94A0062DA96 /* YYHomeTableView.m */,
-				74C269281CC9B94A0062DA96 /* YYStandColl.h */,
-				74C269291CC9B94A0062DA96 /* YYStandColl.m */,
-				74C2692A1CC9B94A0062DA96 /* YYThemeTableView.h */,
-				74C2692B1CC9B94A0062DA96 /* YYThemeTableView.m */,
-				74C2692C1CC9B94A0062DA96 /* YYThemeTableViewCell.h */,
-				74C2692D1CC9B94A0062DA96 /* YYThemeTableViewCell.m */,
-				74C2692E1CC9B94A0062DA96 /* YYThemeTableViewCell.xib */,
+				74C26A301CCA08F50062DA96 /* Home */,
+				74C26A2E1CCA088A0062DA96 /* Theme */,
+				74C26A2D1CCA08670062DA96 /* Details */,
+				74C26A2F1CCA08DC0062DA96 /* Buy */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1649,28 +1619,8 @@
 		74C269831CC9B9F30062DA96 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				74C269841CC9B9F30062DA96 /* YYAdressViewController.h */,
-				74C269851CC9B9F30062DA96 /* YYAdressViewController.m */,
-				74C269861CC9B9F30062DA96 /* YYAdressViewController.xib */,
-				74C269871CC9B9F30062DA96 /* YYAreaViewController.h */,
-				74C269881CC9B9F30062DA96 /* YYAreaViewController.m */,
-				74C269891CC9B9F30062DA96 /* YYChangeAdressViewController.h */,
-				74C2698A1CC9B9F30062DA96 /* YYChangeAdressViewController.m */,
-				74C2698B1CC9B9F30062DA96 /* YYCityViewController.h */,
-				74C2698C1CC9B9F30062DA96 /* YYCityViewController.m */,
-				74C2698D1CC9B9F30062DA96 /* YYCountyViewController.h */,
-				74C2698E1CC9B9F30062DA96 /* YYCountyViewController.m */,
-				74C2698F1CC9B9F30062DA96 /* YYPaymentViewController.h */,
-				74C269901CC9B9F30062DA96 /* YYPaymentViewController.m */,
-				74C269911CC9B9F30062DA96 /* YYPaymentViewController.xib */,
-				74C269921CC9B9F30062DA96 /* YYPayViewController.h */,
-				74C269931CC9B9F30062DA96 /* YYPayViewController.m */,
-				74C269941CC9B9F30062DA96 /* YYSelectAddViewController.h */,
-				74C269951CC9B9F30062DA96 /* YYSelectAddViewController.m */,
-				74C269961CC9B9F30062DA96 /* YYShoppingController.h */,
-				74C269971CC9B9F30062DA96 /* YYShoppingController.m */,
-				74C269981CC9B9F30062DA96 /* YYShowViewController.h */,
-				74C269991CC9B9F30062DA96 /* YYShowViewController.m */,
+				74C26A0F1CC9C4290062DA96 /* Pay */,
+				74C26A0E1CC9C4120062DA96 /* Adress */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1678,17 +1628,12 @@
 		74C2699A1CC9B9F30062DA96 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				74C2699B1CC9B9F30062DA96 /* china.xml */,
+				74C26A111CC9C4C90062DA96 /* XMl */,
+				74C26A101CC9C4920062DA96 /* Delete */,
 				74C2699C1CC9B9F30062DA96 /* Custom+UIColor.h */,
 				74C2699D1CC9B9F30062DA96 /* Custom+UIColor.m */,
-				74C2699E1CC9B9F30062DA96 /* YYAddressData.h */,
-				74C2699F1CC9B9F30062DA96 /* YYAddressData.m */,
 				74C269A01CC9B9F30062DA96 /* YYAddressModel.h */,
 				74C269A11CC9B9F30062DA96 /* YYAddressModel.m */,
-				74C269A21CC9B9F30062DA96 /* YYAreaData.h */,
-				74C269A31CC9B9F30062DA96 /* YYAreaData.m */,
-				74C269A41CC9B9F30062DA96 /* YYChinaModel.h */,
-				74C269A51CC9B9F30062DA96 /* YYChinaModel.m */,
 				74C269A61CC9B9F30062DA96 /* YYDistributionModel.h */,
 				74C269A71CC9B9F30062DA96 /* YYDistributionModel.m */,
 				74C269A81CC9B9F30062DA96 /* YYManaModel.h */,
@@ -1702,6 +1647,7 @@
 		74C269AC1CC9B9F30062DA96 /* Others */ = {
 			isa = PBXGroup;
 			children = (
+				74C26A151CC9C7CC0062DA96 /* alipay_icon.png */,
 				74C269AD1CC9B9F30062DA96 /* balance_pay.png */,
 				74C269AE1CC9B9F30062DA96 /* bankcard_ic_titleadd.png */,
 				74C269AF1CC9B9F30062DA96 /* cardmanager_detail_nactive_bg.9.png */,
@@ -1726,25 +1672,93 @@
 		74C269BE1CC9B9F30062DA96 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				74C26A201CC9F5390062DA96 /* WXPay */,
+				74C26A141CC9C5990062DA96 /* Pay */,
+				74C26A131CC9C5200062DA96 /* Shop */,
+				74C26A121CC9C5080062DA96 /* Address */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		74C26A0E1CC9C4120062DA96 /* Adress */ = {
+			isa = PBXGroup;
+			children = (
+				74C269941CC9B9F30062DA96 /* YYSelectAddViewController.h */,
+				74C269951CC9B9F30062DA96 /* YYSelectAddViewController.m */,
+				74C269891CC9B9F30062DA96 /* YYChangeAdressViewController.h */,
+				74C2698A1CC9B9F30062DA96 /* YYChangeAdressViewController.m */,
+				74C269841CC9B9F30062DA96 /* YYAdressViewController.h */,
+				74C269851CC9B9F30062DA96 /* YYAdressViewController.m */,
+				74C269861CC9B9F30062DA96 /* YYAdressViewController.xib */,
+				74C269871CC9B9F30062DA96 /* YYAreaViewController.h */,
+				74C269881CC9B9F30062DA96 /* YYAreaViewController.m */,
+				74C2698B1CC9B9F30062DA96 /* YYCityViewController.h */,
+				74C2698C1CC9B9F30062DA96 /* YYCityViewController.m */,
+				74C2698D1CC9B9F30062DA96 /* YYCountyViewController.h */,
+				74C2698E1CC9B9F30062DA96 /* YYCountyViewController.m */,
+			);
+			name = Adress;
+			sourceTree = "<group>";
+		};
+		74C26A0F1CC9C4290062DA96 /* Pay */ = {
+			isa = PBXGroup;
+			children = (
+				74C269961CC9B9F30062DA96 /* YYShoppingController.h */,
+				74C269971CC9B9F30062DA96 /* YYShoppingController.m */,
+				74C269921CC9B9F30062DA96 /* YYPayViewController.h */,
+				74C269931CC9B9F30062DA96 /* YYPayViewController.m */,
+				74C2698F1CC9B9F30062DA96 /* YYPaymentViewController.h */,
+				74C269901CC9B9F30062DA96 /* YYPaymentViewController.m */,
+				74C269911CC9B9F30062DA96 /* YYPaymentViewController.xib */,
+			);
+			name = Pay;
+			sourceTree = "<group>";
+		};
+		74C26A101CC9C4920062DA96 /* Delete */ = {
+			isa = PBXGroup;
+			children = (
+				74C2699E1CC9B9F30062DA96 /* YYAddressData.h */,
+				74C2699F1CC9B9F30062DA96 /* YYAddressData.m */,
+			);
+			name = Delete;
+			sourceTree = "<group>";
+		};
+		74C26A111CC9C4C90062DA96 /* XMl */ = {
+			isa = PBXGroup;
+			children = (
+				74C2699B1CC9B9F30062DA96 /* china.xml */,
+				74C269A21CC9B9F30062DA96 /* YYAreaData.h */,
+				74C269A31CC9B9F30062DA96 /* YYAreaData.m */,
+				74C269A41CC9B9F30062DA96 /* YYChinaModel.h */,
+				74C269A51CC9B9F30062DA96 /* YYChinaModel.m */,
+			);
+			name = XMl;
+			sourceTree = "<group>";
+		};
+		74C26A121CC9C5080062DA96 /* Address */ = {
+			isa = PBXGroup;
+			children = (
 				74C269BF1CC9B9F30062DA96 /* YYAddressManaTab.h */,
 				74C269C01CC9B9F30062DA96 /* YYAddressManaTab.m */,
 				74C269C11CC9B9F30062DA96 /* YYAddressManaTableViewCell.h */,
 				74C269C21CC9B9F30062DA96 /* YYAddressManaTableViewCell.m */,
 				74C269C31CC9B9F30062DA96 /* YYAddressManaTableViewCell.xib */,
+			);
+			name = Address;
+			sourceTree = "<group>";
+		};
+		74C26A131CC9C5200062DA96 /* Shop */ = {
+			isa = PBXGroup;
+			children = (
+				74C269CF1CC9B9F30062DA96 /* YYSectionView.h */,
+				74C269D01CC9B9F30062DA96 /* YYSectionView.m */,
+				74C269D11CC9B9F30062DA96 /* YYSectionView.xib */,
 				74C269C41CC9B9F30062DA96 /* YYEditView.h */,
 				74C269C51CC9B9F30062DA96 /* YYEditView.m */,
 				74C269C61CC9B9F30062DA96 /* YYEditView.xib */,
 				74C269C71CC9B9F30062DA96 /* YYHeadView.h */,
 				74C269C81CC9B9F30062DA96 /* YYHeadView.m */,
 				74C269C91CC9B9F30062DA96 /* YYHeadView.xib */,
-				74C269CA1CC9B9F30062DA96 /* YYPayTableViewCell.h */,
-				74C269CB1CC9B9F30062DA96 /* YYPayTableViewCell.m */,
-				74C269CC1CC9B9F30062DA96 /* YYPayTableViewCell.xib */,
-				74C269CD1CC9B9F30062DA96 /* YYPayTabView.h */,
-				74C269CE1CC9B9F30062DA96 /* YYPayTabView.m */,
-				74C269CF1CC9B9F30062DA96 /* YYSectionView.h */,
-				74C269D01CC9B9F30062DA96 /* YYSectionView.m */,
-				74C269D11CC9B9F30062DA96 /* YYSectionView.xib */,
 				74C269D21CC9B9F30062DA96 /* YYShoppingDownView.h */,
 				74C269D31CC9B9F30062DA96 /* YYShoppingDownView.m */,
 				74C269D41CC9B9F30062DA96 /* YYShoppingDownView.xib */,
@@ -1752,7 +1766,146 @@
 				74C269D61CC9B9F30062DA96 /* YYShoppingTableViewCell.m */,
 				74C269D71CC9B9F30062DA96 /* YYShoppingTableViewCell.xib */,
 			);
-			path = Views;
+			name = Shop;
+			sourceTree = "<group>";
+		};
+		74C26A141CC9C5990062DA96 /* Pay */ = {
+			isa = PBXGroup;
+			children = (
+				74C269CD1CC9B9F30062DA96 /* YYPayTabView.h */,
+				74C269CE1CC9B9F30062DA96 /* YYPayTabView.m */,
+				74C269CA1CC9B9F30062DA96 /* YYPayTableViewCell.h */,
+				74C269CB1CC9B9F30062DA96 /* YYPayTableViewCell.m */,
+				74C269CC1CC9B9F30062DA96 /* YYPayTableViewCell.xib */,
+			);
+			name = Pay;
+			sourceTree = "<group>";
+		};
+		74C26A201CC9F5390062DA96 /* WXPay */ = {
+			isa = PBXGroup;
+			children = (
+				74C26A271CC9F69F0062DA96 /* ApiXml.h */,
+				74C26A281CC9F69F0062DA96 /* ApiXml.mm */,
+				74C26A211CC9F54F0062DA96 /* WeChatPayManager.h */,
+				74C26A221CC9F54F0062DA96 /* WeChatPayManager.m */,
+				74C26A2A1CC9F6BF0062DA96 /* lhMyConnection.h */,
+				74C26A2B1CC9F6BF0062DA96 /* lhMyConnection.m */,
+				74C26A1D1CC9F5330062DA96 /* lhSharePay.h */,
+				74C26A1E1CC9F5330062DA96 /* lhSharePay.m */,
+				74C26A241CC9F67F0062DA96 /* WXUtil.h */,
+				74C26A251CC9F67F0062DA96 /* WXUtil.mm */,
+			);
+			name = WXPay;
+			sourceTree = "<group>";
+		};
+		74C26A2D1CCA08670062DA96 /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				74C269121CC9B94A0062DA96 /* YYDetailDownView.h */,
+				74C269131CC9B94A0062DA96 /* YYDetailDownView.m */,
+				74C269141CC9B94A0062DA96 /* YYDetailDownView.xib */,
+				74C269151CC9B94A0062DA96 /* YYDetailHeadView.h */,
+				74C269161CC9B94A0062DA96 /* YYDetailHeadView.m */,
+				74C269171CC9B94A0062DA96 /* YYDetailOneView.h */,
+				74C269181CC9B94A0062DA96 /* YYDetailOneView.m */,
+				74C269191CC9B94A0062DA96 /* YYDetailOneView.xib */,
+				74C2691A1CC9B94A0062DA96 /* YYDetailTableView.h */,
+				74C2691B1CC9B94A0062DA96 /* YYDetailTableView.m */,
+				74C2691C1CC9B94A0062DA96 /* YYDetailTwoView.h */,
+				74C2691D1CC9B94A0062DA96 /* YYDetailTwoView.m */,
+				74C2691E1CC9B94A0062DA96 /* YYDetailZeroView.h */,
+				74C2691F1CC9B94A0062DA96 /* YYDetailZeroView.m */,
+				74C269201CC9B94A0062DA96 /* YYDetailZeroView.xib */,
+				74C269081CC9B94A0062DA96 /* PhotoScrollView.h */,
+				74C269091CC9B94A0062DA96 /* PhotoScrollView.m */,
+			);
+			name = Details;
+			sourceTree = "<group>";
+		};
+		74C26A2E1CCA088A0062DA96 /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				74C2692A1CC9B94A0062DA96 /* YYThemeTableView.h */,
+				74C2692B1CC9B94A0062DA96 /* YYThemeTableView.m */,
+				74C2692C1CC9B94A0062DA96 /* YYThemeTableViewCell.h */,
+				74C2692D1CC9B94A0062DA96 /* YYThemeTableViewCell.m */,
+				74C2692E1CC9B94A0062DA96 /* YYThemeTableViewCell.xib */,
+			);
+			name = Theme;
+			sourceTree = "<group>";
+		};
+		74C26A2F1CCA08DC0062DA96 /* Buy */ = {
+			isa = PBXGroup;
+			children = (
+				74C2690C1CC9B94A0062DA96 /* YYBuyView.h */,
+				74C2690D1CC9B94A0062DA96 /* YYBuyView.m */,
+				74C2690E1CC9B94A0062DA96 /* YYBuyView.xib */,
+				74C269281CC9B94A0062DA96 /* YYStandColl.h */,
+				74C269291CC9B94A0062DA96 /* YYStandColl.m */,
+			);
+			name = Buy;
+			sourceTree = "<group>";
+		};
+		74C26A301CCA08F50062DA96 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				74C2690F1CC9B94A0062DA96 /* YYCollectionViewCell.h */,
+				74C269101CC9B94A0062DA96 /* YYCollectionViewCell.m */,
+				74C269111CC9B94A0062DA96 /* YYCollectionViewCell.xib */,
+				74C269211CC9B94A0062DA96 /* YYHeaderView.h */,
+				74C269221CC9B94A0062DA96 /* YYHeaderView.m */,
+				74C269231CC9B94A0062DA96 /* YYHomeCollectionView.h */,
+				74C269241CC9B94A0062DA96 /* YYHomeCollectionView.m */,
+				74C269251CC9B94A0062DA96 /* YYHomePage.storyboard */,
+				74C269261CC9B94A0062DA96 /* YYHomeTableView.h */,
+				74C269271CC9B94A0062DA96 /* YYHomeTableView.m */,
+			);
+			name = Home;
+			sourceTree = "<group>";
+		};
+		74C26A311CCA0A630062DA96 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				74C268D61CC9B94A0062DA96 /* YYHttpRequest.h */,
+				74C268D71CC9B94A0062DA96 /* YYHttpRequest.m */,
+				74C268DA1CC9B94A0062DA96 /* YYMyData.h */,
+				74C268DB1CC9B94A0062DA96 /* YYMyData.m */,
+				74C268DC1CC9B94A0062DA96 /* YYNetWorking.h */,
+				74C268DD1CC9B94A0062DA96 /* YYNetWorking.m */,
+				74C268CC1CC9B94A0062DA96 /* UIView+UIViewController.h */,
+				74C268CD1CC9B94A0062DA96 /* UIView+UIViewController.m */,
+				74C268C81CC9B94A0062DA96 /* BaseModel.h */,
+				74C268C91CC9B94A0062DA96 /* BaseModel.m */,
+				74C268CA1CC9B94A0062DA96 /* SegmentView.h */,
+				74C268CB1CC9B94A0062DA96 /* SegmentView.m */,
+			);
+			name = Base;
+			sourceTree = "<group>";
+		};
+		74C26A321CCA0A8D0062DA96 /* PriceModel */ = {
+			isa = PBXGroup;
+			children = (
+				74C268E21CC9B94A0062DA96 /* YYStandardModel.h */,
+				74C268E31CC9B94A0062DA96 /* YYStandardModel.m */,
+				74C268D81CC9B94A0062DA96 /* YYImageModel.h */,
+				74C268D91CC9B94A0062DA96 /* YYImageModel.m */,
+				74C268E41CC9B94A0062DA96 /* YYTextModel.h */,
+				74C268E51CC9B94A0062DA96 /* YYTextModel.m */,
+				74C268E01CC9B94A0062DA96 /* YYPriceModel.h */,
+				74C268E11CC9B94A0062DA96 /* YYPriceModel.m */,
+			);
+			name = PriceModel;
+			sourceTree = "<group>";
+		};
+		74C26A331CCA159A0062DA96 /* Message */ = {
+			isa = PBXGroup;
+			children = (
+				74C268C31CC9B94A0062DA96 /* YYSeachViewController.h */,
+				74C268C41CC9B94A0062DA96 /* YYSeachViewController.m */,
+				74C268C11CC9B94A0062DA96 /* YYMessageViewController.h */,
+				74C268C21CC9B94A0062DA96 /* YYMessageViewController.m */,
+			);
+			name = Message;
 			sourceTree = "<group>";
 		};
 		74E58B0B1CB0AB3900895F6D /* Umeng */ = {
@@ -1852,7 +2005,7 @@
 				TargetAttributes = {
 					10CD32AB1CA0CE5800D8A062 = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = XDYK7H7879;
+						DevelopmentTeam = P7J6N6L866;
 					};
 					10CD32C41CA0CE5800D8A062 = {
 						CreatedOnToolsVersion = 7.2;
@@ -1949,6 +2102,7 @@
 				74C269EF1CC9B9F30062DA96 /* cardmanager_detail_nactive_bg.9.png in Resources */,
 				74C2697B1CC9B94A0062DA96 /* YYThemeTableViewCell.xib in Resources */,
 				74C269F91CC9B9F30062DA96 /* ic_action_previous_item_right.png in Resources */,
+				74C26A161CC9C7CC0062DA96 /* alipay_icon.png in Resources */,
 				74C269F21CC9B9F30062DA96 /* check_normal.png in Resources */,
 				74C269F41CC9B9F30062DA96 /* common_ic_radiobox_off.png in Resources */,
 				74C2695C1CC9B94A0062DA96 /* xc_ji_feng.png in Resources */,
@@ -2068,6 +2222,7 @@
 				74C269311CC9B94A0062DA96 /* YYDetailViewController.m in Sources */,
 				10CD339A1CA4FEAA00D8A062 /* YYleftTableCell.m in Sources */,
 				74C269711CC9B94A0062DA96 /* YYDetailTwoView.m in Sources */,
+				74C26A261CC9F67F0062DA96 /* WXUtil.mm in Sources */,
 				74C2693D1CC9B94A0062DA96 /* YYHttpRequest.m in Sources */,
 				1006B6A51CBB3F2A003ED9C0 /* YYMemberTool.m in Sources */,
 				1044198E1CC767DB00252F9B /* YYOnSell.m in Sources */,
@@ -2077,13 +2232,13 @@
 				1044197C1CC70FE300252F9B /* YYConsumeConfigViewController.m in Sources */,
 				10CD33B41CA661A200D8A062 /* MJConst.m in Sources */,
 				10CD33971CA4D09400D8A062 /* YYNavViewController.m in Sources */,
+				74C26A1F1CC9F5330062DA96 /* lhSharePay.m in Sources */,
 				74C2696B1CC9B94A0062DA96 /* YYDetailDownView.m in Sources */,
 				10CD33C11CA8C74D00D8A062 /* YYBaseModel.m in Sources */,
 				74C269E61CC9B9F30062DA96 /* YYAddressData.m in Sources */,
 				104A97991CB7500C009453B0 /* YYMyOrderCell.m in Sources */,
 				74C2697A1CC9B94A0062DA96 /* YYThemeTableViewCell.m in Sources */,
 				74C269441CC9B94A0062DA96 /* YYTextModel.m in Sources */,
-				74C269E31CC9B9F30062DA96 /* YYShowViewController.m in Sources */,
 				74C2693B1CC9B94A0062DA96 /* YYCXHomeModel.m in Sources */,
 				74C269EA1CC9B9F30062DA96 /* YYDistributionModel.m in Sources */,
 				1006B6EF1CBCE513003ED9C0 /* YYAccountList.m in Sources */,
@@ -2163,6 +2318,7 @@
 				104419691CC707AD00252F9B /* YYCheckNewController.m in Sources */,
 				74C269751CC9B94A0062DA96 /* YYHomeCollectionView.m in Sources */,
 				74C269741CC9B94A0062DA96 /* YYHeaderView.m in Sources */,
+				74C26A291CC9F69F0062DA96 /* ApiXml.mm in Sources */,
 				10CD33B81CA661A200D8A062 /* NSObject+MJCoding.m in Sources */,
 				74C269781CC9B94A0062DA96 /* YYStandColl.m in Sources */,
 				74C2692F1CC9B94A0062DA96 /* YYCarouseViewController.m in Sources */,
@@ -2188,8 +2344,10 @@
 				10F54C191CB3BA4100ED2F86 /* YYFastRegisterViewController.m in Sources */,
 				100DDF8E1CC4F1A200CECD1B /* YYMIne2Controller.m in Sources */,
 				74C2693C1CC9B94A0062DA96 /* YYDetailModel.m in Sources */,
+				74C26A231CC9F54F0062DA96 /* WeChatPayManager.m in Sources */,
 				1006B6E51CBCD72F003ED9C0 /* YYMyScoreListViewController.m in Sources */,
 				74C269D81CC9B9F30062DA96 /* YYAdressViewController.m in Sources */,
+				74C26A2C1CC9F6BF0062DA96 /* lhMyConnection.m in Sources */,
 				10CD334B1CA2914400D8A062 /* UIView+Extension.m in Sources */,
 				104419861CC7673700252F9B /* YYProductMangerViewController.m in Sources */,
 				10F54C1F1CB4DB6B00ED2F86 /* YYsanfangModel.m in Sources */,
@@ -2358,8 +2516,9 @@
 					"$(PROJECT_DIR)/xinchengShop/Umeng/TencentOpenAPI",
 					"$(PROJECT_DIR)/xinchengShop/Umeng/Wechat",
 					"$(PROJECT_DIR)/xinchengShop/Umeng/UMSocial_Sdk_4.2.3",
+					"$(PROJECT_DIR)/xinchengShop",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.banksoft.xinchengsss;
+				PRODUCT_BUNDLE_IDENTIFIER = com.banksoft.xinchengssss;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -2389,8 +2548,9 @@
 					"$(PROJECT_DIR)/xinchengShop/Umeng/TencentOpenAPI",
 					"$(PROJECT_DIR)/xinchengShop/Umeng/Wechat",
 					"$(PROJECT_DIR)/xinchengShop/Umeng/UMSocial_Sdk_4.2.3",
+					"$(PROJECT_DIR)/xinchengShop",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.banksoft.xinchengsss;
+				PRODUCT_BUNDLE_IDENTIFIER = com.banksoft.xinchengssss;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};

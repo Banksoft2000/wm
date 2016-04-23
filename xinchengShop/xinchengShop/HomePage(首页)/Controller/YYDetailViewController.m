@@ -206,14 +206,17 @@
     
     YYPayViewController *pay = [[YYPayViewController alloc] init];
    
+    //构建YYPayViewController 需要的数据结构
     YYShoppingModel *model = [[YYShoppingModel alloc] initWithDictionary:_productDic];
-    
     NSArray *arr = [[NSArray alloc] initWithObjects:model, nil];
     NSArray *arr1 = [[NSArray alloc] initWithObjects:arr, nil];
+    
     pay.shopArr = (NSMutableArray *)arr1;
     
-    NSInteger money = [model.price integerValue] * [model.number integerValue] ;
+    NSInteger money = [model.price integerValue] * [model.number integerValue];
+    
     pay.money = money;
+    
     [self.navigationController pushViewController:pay animated:YES];
     
 }
@@ -321,13 +324,38 @@
         
         NSArray *standardsList = data[@"standardsList"];
         NSArray *priceList = data[@"priceStock"];
+        
+        // STAND_IDS
+        NSMutableString *standIDs = [[NSMutableString alloc] init];
+        //  STAND_VALUES
+        NSMutableString  *standValue = [[NSMutableString alloc] init];
         //获取到规格
         for (NSDictionary *dic in standardsList) {
             
+            //拼接订单提交时需要的 属性id
+            if (standIDs.length < 1) {
+                
+                [standIDs appendFormat:@"%@",dic[@"id"]];
+            }else {
+                
+                [standIDs appendFormat:@"|%@",dic[@"id"]];
+            }
+            
+            //拼接订单提交时需要的 属性 名称
+            if (standValue.length < 1) {
+                
+                [standIDs appendFormat:@"%@",dic[@"name"]];
+            }else {
+                
+                [standIDs appendFormat:@"|%@",dic[@"name"]];
+            }
+            
+            //规格订单的详情信息
             YYStandardModel *model = [[YYStandardModel alloc] initWithDictionary:dic];
             
             [_standardArr addObject:model];
 
+            //图片
             if ([model.type isEqual:@"image"]) {
                 
                 NSArray *list = dic[@"list"];
@@ -340,7 +368,10 @@
                 }
                 
                 [_allData addObject:_colorArr];
-            }else if ([model.type isEqual:@"text"]){
+                
+            }
+            //文字
+            else if ([model.type isEqual:@"text"]){
                 
                 NSArray *list = dic[@"list"];
                 
@@ -363,11 +394,16 @@
             [_priceArr addObject:model];
             
         }
+        
         _buyView.allData = _allData;
-        _buyView.standArr = _standardArr;
+        _buyView.standArr = _standardArr;       //规格
         _buyView.colorArr = _colorArr;
         _buyView.sizeArr = _sizeArr;
         _buyView.priceArr = _priceArr;
+        
+        //保存数据需要的参数
+        [_productDic setObject:standIDs forKey:STAND_IDS];
+        [_productDic setObject:standValue forKey:STAND_VALUES];
  
     }];
  
