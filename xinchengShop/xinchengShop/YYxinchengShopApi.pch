@@ -69,6 +69,11 @@
 #define STAND_KEYS      @"standardKeys"       //ids-------ids
 #define STAND_NAMES     @"standardNames"      //白色|XXL---staic
 
+#define EXPRESS_TYPE    @"expressType"
+#define EXPRESS_PRICE   @"expressPrice"
+#define MESSAGE         @"remark"
+
+
 //key 值-------收货地址
 #define NAME_ADRESS     @"userName"
 #define ADRESS          @"detail"

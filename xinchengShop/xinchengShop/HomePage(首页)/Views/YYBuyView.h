@@ -17,7 +17,6 @@
 @protocol BuyDelegate <NSObject>
 
 - (void)productDetail:(NSDictionary *)dic;
-- (void)aaaaaaaaaaaaaa;
 
 @end
 @interface YYBuyView : UIView<StandDelegate>

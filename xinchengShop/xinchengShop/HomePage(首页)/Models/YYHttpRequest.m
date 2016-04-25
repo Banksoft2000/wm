@@ -93,6 +93,37 @@
     }];
 }
 
+
++ (void)getRequest:(NSString *)url withParam:(NSDictionary *)param success:(void(^)(id responseObjc))succeedBlock failBlock:(void(^)(NSHTTPURLResponse *responseObjc))failBlock {
+    
+    //1.
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    
+    //2.
+    manager.requestSerializer = [AFHTTPRequestSerializer serializer];
+    
+    //3.
+    manager.responseSerializer = [AFHTTPResponseSerializer serializer];
+    
+    [manager GET:url parameters:param progress:^(NSProgress * _Nonnull downloadProgress) {
+        
+    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        
+        //解析接送数据
+        id responsObj = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingAllowFragments error:nil];
+        //
+        succeedBlock(responsObj);
+        
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        
+        NSLog(@"HTTP出现错误");
+        
+    }];
+    
+}
+
+
 #pragma POST---json
 + (void)httpPostRequest:(NSString *)url withParam:(NSDictionary *)param withHead:(NSString *)head success:(void(^)(id responseObjc))succeedBlock failBlock:(void(^)(NSHTTPURLResponse *responseObjc))failBlock {
     

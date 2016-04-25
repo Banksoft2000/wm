@@ -85,18 +85,33 @@
         make.width.equalTo(@30);
         
     }];
-
-    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-    [leftBtn addSubview:button];
-    [button setImage:[UIImage imageNamed:@"message_w_meitu_3"] forState:UIControlStateNormal];
-    [button addTarget:self action:@selector(leftBtnAction:) forControlEvents:UIControlEventTouchUpInside];
-    [button mas_makeConstraints:^(MASConstraintMaker *make) {
-        
+    
+    UIImageView *img = [[UIImageView alloc] init];
+    [leftBtn addSubview:img];
+    [img mas_makeConstraints:^(MASConstraintMaker *make) {
         
         make.left.equalTo(leftBtn.mas_left);
         make.top.equalTo(leftBtn.mas_top);
         make.height.equalTo(@20);
         make.width.equalTo(@20);
+    }];
+    img.image = [UIImage imageNamed:@"message_w_meitu_3"];
+    img.userInteractionEnabled = YES;
+    
+
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    [leftBtn addSubview:button];
+    
+    button.frame = leftBtn.bounds;
+    [button addTarget:self action:@selector(leftBtnAction:) forControlEvents:UIControlEventTouchUpInside];
+    
+    [button mas_makeConstraints:^(MASConstraintMaker *make) {
+        
+        
+        make.left.equalTo(leftBtn.mas_left).offset(-10);
+        make.top.equalTo(leftBtn.mas_top);
+        make.height.equalTo(@50);
+        make.width.equalTo(@50);
     }];
 
     UILabel *label = [[UILabel alloc] init];
@@ -108,9 +123,9 @@
     [label mas_makeConstraints:^(MASConstraintMaker *make) {
         
         make.left.equalTo(leftBtn.mas_left);
-        make.width.equalTo(button.mas_width);
+        make.width.equalTo(img.mas_width);
         make.height.equalTo(@20);
-        make.top.equalTo (button.mas_bottom).offset(-3);
+        make.top.equalTo (img.mas_bottom).offset(-3);
         
     }];
 

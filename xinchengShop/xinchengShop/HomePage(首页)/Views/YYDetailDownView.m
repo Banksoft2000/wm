@@ -16,11 +16,7 @@
     
     _buy.backgroundColor = UIBUTTON_ORANGE;
     _addShopping.backgroundColor = PRICE_TEXT_RED;
-    
-    
 
-    
-    
 }
 
 - (void)setProductId:(NSString *)productId {
@@ -34,9 +30,14 @@
         
         if (responsObjc[@"data"]) {
             
+            if (responsObjc[@"data"] isEqualToString:@"false") {
+                
+                
+            }
             _likeImg.image = [UIImage imageNamed:@"c_shop_level1"];
             _likeBtn.selected = NO;
         }else {
+            //不喜欢
             _likeImg.image = [UIImage imageNamed:@"c_shop_level0"];
             _likeBtn.selected = YES;
             
@@ -52,6 +53,7 @@
 
 - (IBAction)shoppingCart:(UIButton *)sender {
     
+    self.viewController.tabBarController.selectedIndex = 2;
     
 }
 

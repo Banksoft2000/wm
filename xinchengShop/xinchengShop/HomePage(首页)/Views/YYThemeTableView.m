@@ -14,6 +14,8 @@
 - (void)initDetails {
     
     
+    
+    
 }
 
 - (void)setDataArr:(NSArray *)dataArr {

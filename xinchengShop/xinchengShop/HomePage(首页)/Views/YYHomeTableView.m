@@ -200,7 +200,7 @@
         //主题街页面
         YYXCViewController *vc = [[YYXCViewController alloc] init];
         
-        
+        vc.title = model.name;
         vc.url = url;
         
         [self.viewController.navigationController pushViewController:vc animated:YES];

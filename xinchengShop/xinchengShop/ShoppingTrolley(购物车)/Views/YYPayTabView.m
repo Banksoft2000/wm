@@ -35,12 +35,13 @@
     
     CGPoint selfContentSet;
     
+
+
 }
 - (id)initWithFrame:(CGRect)frame style:(UITableViewStyle)style {
   
     if (self = [super initWithFrame:frame style:style]) {
       
-
         isHiden = NO;
         [self initDetails];
         
@@ -53,7 +54,6 @@
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(selfKeyBoardShow:) name:UIKeyboardWillShowNotification object:nil];
         //隐藏的时候添加监听
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(selfKeyBoardHidden) name:UIKeyboardWillHideNotification object:nil];
-        
         
         if ([self respondsToSelector:@selector(setSeparatorInset:)]){
             
@@ -83,11 +83,17 @@
     
     _model = model;
     _header.model = _model;
+    
+
+    
 }
 
 - (void)setDataArr:(NSArray *)dataArr {
     
     _dataArr = dataArr;
+    
+    _distriArr = [[NSMutableArray alloc] init];
+    _messageArr = [[NSMutableArray alloc] init];
     
     [self reloadData];
 }
@@ -202,14 +208,13 @@
         distriCell.selectionStyle = UITableViewCellSelectionStyleNone;
         return distriCell;
     }
-         
-     
-    
+   
+    //产品cell
     YYPayTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"payCell"];
-
+    //配送方式cell
     UITableViewCell *cellDefa = [tableView dequeueReusableCellWithIdentifier:@"defaCell"];
+    //留言cell
     UITableViewCell *sayCell = [tableView dequeueReusableCellWithIdentifier:@"sayCell"];
-    
     
     NSArray *product = _dataArr[indexPath.section];
     if (indexPath.row < product.count) {
@@ -253,6 +258,7 @@
             cellDefa.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
             cellDefa.selectionStyle = UITableViewCellSeparatorStyleNone;
 
+            [_distriArr addObject:distributelab.text];
             return cellDefa;
             
         }else if (indexPath.row == product.count + 1) {
@@ -273,6 +279,7 @@
             msg.delegate = self;
             sayCell.accessoryType = UITableViewCellAccessoryNone;
             
+            [_messageArr addObject:msg.text];
             return sayCell;
         }
         
@@ -295,7 +302,7 @@
     sender.selected = YES;
     
     YYDistributionModel *model = _distriData[sender.tag - 4400];
-    _distriStr = [NSString stringWithFormat:@"%@ %d",model.name,model.price];
+    _distriStr = [NSString stringWithFormat:@"%@ %ld",model.name,model.price];
 }
 
 #pragma mark - UITextFieldDelegate
@@ -308,20 +315,18 @@
 }
 - (void)textFieldDidBeginEditing:(UITextField *)textField {
 
-    
+    //获得当前textfile在 主view 上的 坐标 和 高度
     self.tableFooterView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 500)];
     
     CGRect frame = [textField.superview convertRect:textField.frame toView:self.viewController.view];
     textFielHei = frame.origin.y;
- 
-    NSLog(@"%@--%@",self.superview,[self.subviews class]);
-
 
 }
 
-
-
 - (void)textFieldDidEndEditing:(UITextField *)textField {
+    
+    //后台需要的参数
+    [_messageArr replaceObjectAtIndex:textField.tag - 4200 withObject:textField.text];
     
     [textField resignFirstResponder];
 }
@@ -403,9 +408,7 @@
     
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapGesture)];
     [_magerView addGestureRecognizer:tap];
-    
-    
-    
+
     [self distriTabData:section withRow:row];
 }
 
@@ -464,10 +467,6 @@
         
         [_distriTab reloadData];
     }];
-    
-    
-    
-
 }
 
 //配送方式  确定
@@ -482,7 +481,7 @@
 }
 //tap手势
 - (void)tapGesture {
-    
+    //隐藏临时视图和遮罩视图
     [UIView animateWithDuration:.35 animations:^{
         
         _distriView.transform = CGAffineTransformIdentity;
@@ -513,9 +512,12 @@
         
         UIButton *sender  = [tableView viewWithTag:4400 + indexPath.row];
         sender.selected = YES;
-
+       
+        //传递给self 的某个分组的配送
         YYDistributionModel *model = _distriData[sender.tag - 4400];
         _distriStr = [NSString stringWithFormat:@"%@ %ld",model.name,model.price];
+        //后台需要的参数
+        [_distriArr replaceObjectAtIndex:sender.tag - 4400 withObject:_distriStr];
         
         return;
         
@@ -657,7 +659,6 @@
 
 //释放第一响应者
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
-
 
     if (isHiden == YES) {
         

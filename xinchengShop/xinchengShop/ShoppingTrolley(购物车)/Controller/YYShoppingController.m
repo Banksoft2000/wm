@@ -79,7 +79,7 @@
     
     _tableView.mj_header = [MJRefreshStateHeader headerWithRefreshingTarget:self refreshingAction:@selector(initData)];
     [_tableView.mj_header beginRefreshing];
-  
+
 }
 
 #pragma mark - 获取数据

@@ -29,6 +29,18 @@
 
 }
 
++ (void)getWithURL:(NSString *)url withParam:(NSDictionary *)dic :(void (^)(id responsObjc))block {
+
+    [YYHttpRequest getRequest:url withParam:dic success:^(id responseObjc) {
+        
+        block(responseObjc);
+    } failBlock:^(NSHTTPURLResponse *responseObjc) {
+        
+        
+    }];
+    
+}
+
 /**
  *  post 请求数据
  *

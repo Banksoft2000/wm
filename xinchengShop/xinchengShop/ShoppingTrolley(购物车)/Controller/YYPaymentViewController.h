@@ -10,4 +10,7 @@
 
 @interface YYPaymentViewController : UIViewController
 
+
+@property (copy, nonatomic) NSString *orderIds;
+
 @end

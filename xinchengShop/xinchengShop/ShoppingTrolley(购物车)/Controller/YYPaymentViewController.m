@@ -26,37 +26,46 @@
 
 @implementation YYPaymentViewController
 
-- (void)awakeFromNib {
-    
-    [super awakeFromNib];
-    
-    
-}
-
-
-//支付
+//余额支付
 - (IBAction)payAction:(UIButton *)sender {
     
-    if (![WXApi isWXAppInstalled]) {//检查用户是否安装微信
-        
-        NSLog(@"未安装微信客户端");
-        //...处理
-        
-        return;
-    }
     
-    //请求APP后台服务器下单接口，该接口返回orderDic(订单信息)和payDic(支付账号信息，包括：appID,商户号，APIKey)
-    [lhSharePay addActivityView:self.view];
-    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(rechargeEvent:) name:@"recharge" object:nil];
-    NSDictionary * dic = @{@"rechargeRule_id":@"1",
-                           @"users_id":@"a38d4da064054e99840efdd91280ee35",
-                           @"money":@"1000",
-                           @"way":@"2"};
-    //请求字段
-//    [[lhSharePay alloc] HTTPPOSTNormalRequestForURL:@"填写app服务器的请求接口" parameters:dic method:@"POST" name:@"recharge"];
     
+    
+    /*
+    NSString *url = [[NSString alloc] initWithFormat:@"%@%@",BASE_URL,@"/app/_balancePay" ];
+    //缺少一个PassWord
+#warning CanXue -- Missing PassWord
+    NSDictionary *dic = @{MEMBERID:MEMBERID_VALUE,@"ids":_orderIds};
+    
+    [YYNetWorking postwithURL:url withParam:dic withHeader:nil success:^(id responsObjc) {
+        
+        
+    }];
+    */
     
 }
+/*微信支付
+ 
+ if (![WXApi isWXAppInstalled]) {//检查用户是否安装微信
+ 
+ NSLog(@"未安装微信客户端");
+ //...处理
+ 
+ return;
+ }
+ 
+ //请求APP后台服务器下单接口，该接口返回orderDic(订单信息)和payDic(支付账号信息，包括：appID,商户号，APIKey)
+ [lhSharePay addActivityView:self.view];
+ [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(rechargeEvent:) name:@"recharge" object:nil];
+ NSDictionary * dic = @{@"rechargeRule_id":@"1",
+ @"users_id":@"a38d4da064054e99840efdd91280ee35",
+ @"money":@"1000",
+ @"way":@"2"};
+ //请求字段
+ //    [[lhSharePay alloc] HTTPPOSTNormalRequestForURL:@"填写app服务器的请求接口" parameters:dic method:@"POST" name:@"recharge"];
+ 
+ */
 
 
 #pragma mark - 充值结果

@@ -20,6 +20,8 @@
     NSDictionary *diction;
     NSMutableArray *_productArr;
     
+    NSString *_addressId;
+    
 }
 
 @end
@@ -65,6 +67,7 @@
     
 }
 
+//产品数据
 - (void)setShopArr:(NSMutableArray *)shopArr {
     
     _shopArr = shopArr;
@@ -105,6 +108,8 @@
             if (model.status == YES) {
                 
                 _payTabView.model = model;
+                
+                _payTabView.addressId = model.id;
             }
             
             [addressArr addObject:model];
@@ -116,8 +121,9 @@
             YYAddressModel *model = addressArr[0];
             
             _payTabView.model = model;
+            _payTabView.addressId = model.id;
+            
         }
-    
     }];
   
 }
@@ -127,7 +133,6 @@
     _downView = [[UIView alloc] initWithFrame:CGRectMake(0, SCREEN_HEIGHT-64-50, SCREEN_WIDTH, 50)];
     _downView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"top_line_50"]];
     [self.view addSubview:_downView];
-    
     
     UIButton *okBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     [_downView addSubview:okBtn];
@@ -167,14 +172,162 @@
 - (void)pushYYPaymentVC {
     
     YYPaymentViewController *pay = [[YYPaymentViewController alloc] initWithNibName:@"YYPaymentViewController" bundle:nil];
-
+  
     [self.navigationController pushViewController:pay animated:YES];
     
-   
-   
+    /**
+     *  自己挖的坑自己跳
+     *
+     *  坑： 保存的数据与后台的数据格式不一样
+     *  
+     *  原因： 前期不知道后台需要什么格式的数据
+     *
+     *  为什么不将存储的数据与后台的数据保持一致
+     *
+     *  时间不允许修改 且 其他地方需要本地保存的数据格式
+     *
+     *  后期修改原则  将数据保存为后台需要的数据
+     */
+    //产品的数量
+    int m = 0;
+    NSMutableDictionary *dataDic = [[NSMutableDictionary alloc] init];
+    NSMutableString *shopId = [[NSMutableString alloc] init];
+    NSMutableString *remark = [[NSMutableString alloc] init];
+    for (int i = 0; i < _shopArr.count; i ++ ) {
+        
+        NSArray *product = _shopArr[i];
+        //拼接属性的id
+        YYShoppingModel *productModel = product[0];
+        if (i == 0) {
+            
+            [shopId appendFormat:@"%@",productModel.shopId];
+
+        }else {
+            
+            [shopId appendFormat:@"|%@",productModel.shopId];
+        }
+        
+        //将本地数据转化为传递的参数
+        for (int j = 0; j < product.count; j ++) {
+            
+            YYShoppingModel *model = product[j];
+            NSMutableDictionary *dic = (NSMutableDictionary *)[model dictionaryFromModel];
     
+            //将staic 替换成 standardNames  并将value 的 ”a b“格式替换成 ”a|b“ 格式
+            NSString *standardNames = [dic[STAIC] stringByReplacingOccurrencesOfString:@" " withString:@"|"];
+
+            //总价格
+            NSString *total = [NSString stringWithFormat:@"%ld",[dic[NUMBER] integerValue] * [dic[PRICE] integerValue]];
+            [dic setObject:standardNames forKey:STAND_NAMES];
+            [dic setObject:total forKey:TOTAL];
+            
+            //不需要传递的参数
+            [dic removeObjectForKey:STAIC];
+            [dic removeObjectForKey:SHOP_IMG];
+            [dic removeObjectForKey:NAME];
+            [dic removeObjectForKey:SHOP_NAME];
+            [dic removeObjectForKey:STOCK];
+            [dic removeObjectForKey:AREANO_SHOP];
+            
+            //拼接成list[0].key形式
+            for (NSString *key in dic) {
+                
+                NSString *newKey = [NSString stringWithFormat:@"list[%d].%@",m,key];
+                
+                [dataDic setObject:dic[key] forKey:newKey];
+            }
+            m ++;
+        }
+     
+    }
     
+    //后期删除---现在存在的原因是 price 从后台取出来的数据 为乱码
+    [dataDic setObject:@"222" forKey:@"list[0].price"];    //没有或者为负的时候会报错
+    [dataDic setObject:@"222" forKey:@"list[0].total"];     //，没有回报错
     
+    [dataDic setObject:_payTabView.addressId forKey:@"addressId"];
+    [dataDic setObject:shopId forKey:SHOP_ID];
+    [dataDic setObject:@"1" forKey:@"express"];
+    [dataDic setObject:MEMBERID_VALUE forKey:MEMBERID];
+    
+    /**
+     *  配送方式和留言可以写到一个循环中
+     *
+     *  分开写更加的严谨
+     *
+     */
+    //配送方式
+    if (_payTabView.distriArr.count != 0) {
+        
+        NSMutableString *expressPrice = [[NSMutableString alloc] init];
+        NSMutableString *expressType = [[NSMutableString alloc] init];
+        for (int i = 0; i < _payTabView.distriArr.count; i ++ ) {
+            
+            NSString *distrib = _payTabView.distriArr[i];
+            NSArray *aim = [distrib componentsSeparatedByString:@" "];
+            
+            if (aim.count == 1) {
+             
+                //免费
+                [expressPrice appendFormat:@"%@",@"0"];
+                [expressType appendFormat:@"%@",aim[0]];
+              
+            }else {
+                if (i == 0) {
+                    
+                    //aim数组包含两个值 例如：“EMS” “6”
+                    [expressPrice appendFormat:@"%@",aim[1]];
+                    [expressType appendFormat:@"%@",aim[0]];
+                }else {
+                    [expressPrice appendFormat:@"|%@",aim[1]];
+                    [expressType appendFormat:@"|%@",aim[0]];
+                }
+            }
+        }
+        
+        [dataDic setObject:expressType forKey: EXPRESS_TYPE];
+        [dataDic setObject:expressPrice forKey:EXPRESS_PRICE];
+    }
+    
+    //留言
+    if (_payTabView.messageArr.count != 0) {
+    
+        NSMutableString *message = [[NSMutableString alloc] init];
+        for (int i = 0; i < _payTabView.distriArr.count; i ++ ) {
+            
+            NSString *distrib = _payTabView.distriArr[i];
+            
+            if (i == 0) {
+                
+                //aim数组包含两个值 例如：“EMS” “6”
+                [message appendFormat:@"%@",distrib];
+            }else {
+                [message appendFormat:@"|%@",distrib];
+            }
+        }
+        [dataDic setObject:message forKey:MESSAGE];
+    }
+    
+    NSString *url = [NSString stringWithFormat:@"%@%@",BASE_URL,@"/app/_createMemberOrder"];
+    
+    [YYNetWorking postwithURL:url withParam:dataDic withHeader:nil success:^(id responsObjc) {
+        
+        if (responsObjc[@"data"]) {
+            
+            NSDictionary *data = responsObjc[@"data"];
+            
+            NSArray *orderList = data[@"orderList"];
+            
+            for (NSDictionary *dic in orderList) {
+                
+                //订单的ids
+                pay.orderIds = dic[@"ids"];
+            }
+        }
+       
+        
+    }];
+  
     /*
      productId = 6b671003aae245799556f0400602eedd;
      shopId = f066a2d199d54db9b5d08a6cda4ba0ff;

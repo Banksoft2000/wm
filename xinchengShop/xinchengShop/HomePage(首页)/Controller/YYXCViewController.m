@@ -80,6 +80,8 @@ static NSString *_selectKey = nil;
 - (void)refresh {
     
     _themeTab.mj_header = [MJRefreshStateHeader headerWithRefreshingTarget:self refreshingAction:@selector(initData)];
+    
+    [_themeTab.mj_header beginRefreshing];
 }
 
 //筛选视图
@@ -239,7 +241,6 @@ static NSString *_selectKey = nil;
     
 }
 
-
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     
     [super touchesBegan:touches withEvent:event];
@@ -274,15 +275,10 @@ static NSString *_selectKey = nil;
             text.textColor = PRICE_TEXT_RED;
         }
     }
-    
-
-
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    
     
     switch (indexPath.row) {
         case 0:
@@ -291,11 +287,11 @@ static NSString *_selectKey = nil;
             break;
         case 1:
             
-            _selectKey = @"ordercol=priceOrder/ordertype=desc";
+            _selectKey = @"ordercol=priceOrder&ordertype=desc";
             break;
         case 2:
             
-            _selectKey = @"ordercol=priceOrder/ordertype=asc";
+            _selectKey = @"ordercol=priceOrder&ordertype=asc";
             break;
         case 3:
             
@@ -306,8 +302,9 @@ static NSString *_selectKey = nil;
             break;
     }
     
-    [self initData];
-    
+    _themeTab.mj_header = [MJRefreshStateHeader headerWithRefreshingTarget:self refreshingAction:@selector(initData)];
+    [_themeTab.mj_header beginRefreshing];
+
     //将 筛选 遮罩 视图移除
     [_maskView removeFromSuperview];
     [_selectTab removeFromSuperview];
@@ -345,15 +342,58 @@ static NSString *_selectKey = nil;
     [self.view addSubview:_themeTab];
     
 }
-#pragma mark - 获取数据
 
-//- (void)setUrl:(NSString *)url {
-//    
-//    _url = url;
-//    
-//    _selectKey = _url;
-//    [self initData];
-//}
+//搜索key
+- (void)setUrl:(NSString *)url {
+    
+    _url = url;
+    
+    _selectKey = _url;
+   
+
+    _themeTab.mj_header = [MJRefreshStateHeader headerWithRefreshingTarget:self refreshingAction:@selector(searchData)];
+    [_themeTab.mj_header beginRefreshing];
+
+}
+
+- (void)searchData {
+    
+    if (!_dataArr) {
+        
+        _dataArr = [[NSMutableArray alloc] init];
+    }else {
+        
+        [_dataArr removeAllObjects];
+    }
+    
+    NSString *url = [NSString stringWithFormat:@"%@/app/searchProduct_list",BASE_URL];
+
+    NSArray *aim = [_selectKey componentsSeparatedByString:@"="];
+    
+    NSDictionary *dic = @{aim[0]:aim[1]};
+    
+    [YYNetWorking getWithURL:url withParam:dic :^(id responsObjc) {
+        
+        
+        NSDictionary *dataDic = responsObjc[@"data"];
+        NSArray *listArr = dataDic[@"list"];
+        
+        for (NSDictionary *dic in listArr) {
+            
+            YYClearanceModel *model = [[YYClearanceModel alloc] initWithDictionary:dic];
+            [_dataArr addObject:model];
+        }
+        
+        _themeTab.dataArr = _dataArr;
+        
+        [_themeTab reloadData];
+        
+    }];
+    [_themeTab.mj_header endRefreshing];
+    
+    
+}
+
 //首次获取数据
 - (void)initData{
 
@@ -364,8 +404,9 @@ static NSString *_selectKey = nil;
         
         [_dataArr removeAllObjects];
     }
+    
    
-    NSString *url = [NSString stringWithFormat:@"%@/app/searchProduct_list?%@&%@",BASE_URL,_selectKey,_url];
+    NSString *url = [NSString stringWithFormat:@"%@/app/searchProduct_list?%@",BASE_URL,_selectKey];
     
 
     [YYNetWorking homeHeaderWithURL:url :^(id responsObjc) {
@@ -385,6 +426,7 @@ static NSString *_selectKey = nil;
 
     }];
     [_themeTab.mj_header endRefreshing];
+    
     
 }
 

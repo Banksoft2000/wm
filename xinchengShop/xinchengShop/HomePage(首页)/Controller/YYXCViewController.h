@@ -16,4 +16,6 @@
 //外部传入数据请求参数----需要在外部拼接成 key=value 格式
 @property (nonatomic, copy) NSString *key;
 
+@property (nonatomic, copy) NSString *type;
+
 @end

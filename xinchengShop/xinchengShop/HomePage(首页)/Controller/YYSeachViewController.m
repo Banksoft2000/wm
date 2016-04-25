@@ -34,6 +34,8 @@
     if (_searchBar) {
         
         [_searchBar becomeFirstResponder];
+        
+        _searchBar.text = nil;
     }
     
     if (_tableView) {
@@ -134,8 +136,10 @@
     [_dataArr exchangeObjectAtIndex:indexPath.row withObjectAtIndex:0];
     [_dataArr writeToFile:_path atomically:YES];
     
+    [_searchBar resignFirstResponder];
     YYXCViewController *vc = [[YYXCViewController alloc] init];
     vc.url = [NSString stringWithFormat:@"name=%@",_dataArr[0]];
+        vc.title = @"商品列表";
     [self.navigationController pushViewController:vc animated:YES];
    
 }
@@ -288,7 +292,11 @@
     [_dataArr writeToFile:_path atomically:YES];
     
     YYXCViewController *vc = [[YYXCViewController alloc] init];
-    vc.url = [NSString stringWithFormat:@"name=%@",_searchBar.text];
+    
+    vc.title = @"商品列表";
+    NSString *value = _searchBar.text;
+    vc.url = [NSString stringWithFormat:@"name=%@",value];
+
     [self.navigationController pushViewController:vc animated:YES];
 
 }

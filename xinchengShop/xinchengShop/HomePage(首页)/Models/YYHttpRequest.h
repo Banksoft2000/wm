@@ -32,4 +32,7 @@
  */
 + (void)httpPostRequest:(NSString *)url withParam:(NSDictionary *)param withHead:(NSString *)head success:(void(^)(id responseObjc))succeedBlock failBlock:(void(^)(NSHTTPURLResponse *responseObjc))failBlock;
 
+
++ (void)getRequest:(NSString *)url withParam:(NSDictionary *)param success:(void(^)(id responseObjc))succeedBlock failBlock:(void(^)(NSHTTPURLResponse *responseObjc))failBlock;
+
 @end

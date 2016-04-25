@@ -10,6 +10,7 @@
 
 @interface YYNetWorking : NSObject
 
++ (void)getWithURL:(NSString *)url withParam:(NSDictionary *)dic :(void (^)(id responsObjc))block ;
 
 + (void)homeHeaderWithURL:(NSString *)url :(void(^)(id responsObjc))block;
 

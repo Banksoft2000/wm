@@ -175,8 +175,7 @@
             //            NSString *url=[NSString stringWithFormat:@"http://xinchengguangchang.com/app/memberOrder_list?%25index=1&%25memberId=f066a2d199d54db9b5d08a6cda4ba0ff&status=CREATE"];
             
             [vc loadOrderWithUrl:url];
-            
-            
+       
         }else if (index==1){
             NSLog(@"-----点击了代付款");
             NSString *url=[NSString stringWithFormat:@"http://xinchengguangchang.com/app/memberOrder_list?index=1&memberId=f066a2d199d54db9b5d08a6cda4ba0ff&status=CREATE"];

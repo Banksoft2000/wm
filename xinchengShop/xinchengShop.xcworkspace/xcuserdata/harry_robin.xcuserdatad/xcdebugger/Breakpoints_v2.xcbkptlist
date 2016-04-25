@@ -19,13 +19,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "xinchengShop/ShoppingTrolley(&#x8d2d;&#x7269;&#x8f66;)/Controller/YYPaymentViewController.m"
-            timestampString = "482998356.517761"
+            filePath = "xinchengShop/HomePage(&#x9996;&#x9875;)/Views/YYDetailDownView.m"
+            timestampString = "483237728.933984"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "30"
-            endingLineNumber = "30"
-            landmarkName = "-awakeFromNib"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "-setProductId:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

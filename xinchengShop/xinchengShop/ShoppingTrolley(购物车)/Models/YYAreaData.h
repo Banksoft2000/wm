@@ -10,11 +10,14 @@
 
 @interface YYAreaData : NSObject<NSXMLParserDelegate>
 
+
 - (void)startParser;
 
-
+//省份
 - (NSMutableArray *)province;
+//城市
 - (NSMutableArray *)city;
+//地区
 - (NSMutableArray *)county;
 
 

@@ -108,6 +108,14 @@
 		10F54C271CB50C3A00ED2F86 /* Custom+UIColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 10F54C261CB50C3A00ED2F86 /* Custom+UIColor.m */; };
 		10F54C2B1CB5EDA900ED2F86 /* YYMyOrderListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 10F54C2A1CB5EDA900ED2F86 /* YYMyOrderListViewController.m */; };
 		207D09CBD9857E7D8ABC925A /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 67A534BD8D8A4D5D78C35DDB /* libPods.a */; };
+		7410D8111CCB606F00857DD5 /* AlipaySDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 7410D80D1CCB606F00857DD5 /* AlipaySDK.bundle */; };
+		7410D8121CCB606F00857DD5 /* AlipaySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7410D80E1CCB606F00857DD5 /* AlipaySDK.framework */; };
+		7410D8131CCB606F00857DD5 /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7410D80F1CCB606F00857DD5 /* libcrypto.a */; };
+		7410D8141CCB606F00857DD5 /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7410D8101CCB606F00857DD5 /* libssl.a */; };
+		7410D81F1CCB7EBD00857DD5 /* background_image_320_480.png in Resources */ = {isa = PBXBuildFile; fileRef = 7410D81C1CCB7EBD00857DD5 /* background_image_320_480.png */; };
+		7410D8201CCB7EBD00857DD5 /* background_image_640_960.png in Resources */ = {isa = PBXBuildFile; fileRef = 7410D81D1CCB7EBD00857DD5 /* background_image_640_960.png */; };
+		7410D8211CCB7EBD00857DD5 /* background_image.png in Resources */ = {isa = PBXBuildFile; fileRef = 7410D81E1CCB7EBD00857DD5 /* background_image.png */; };
+		7410D8231CCB7F5900857DD5 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7410D8221CCB7F5900857DD5 /* Default-568h@2x.png */; };
 		7418E6041CB8FAB3005F5A74 /* libSocialSina.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7418E5DB1CB8FAB3005F5A74 /* libSocialSina.a */; };
 		7418E6051CB8FAB3005F5A74 /* libSocialQQ.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7418E5DE1CB8FAB3005F5A74 /* libSocialQQ.a */; };
 		7418E6061CB8FAB3005F5A74 /* TencentOpenAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7418E5DF1CB8FAB3005F5A74 /* TencentOpenAPI.framework */; };
@@ -467,6 +475,14 @@
 		10F54C291CB5EDA900ED2F86 /* YYMyOrderListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYMyOrderListViewController.h; sourceTree = "<group>"; };
 		10F54C2A1CB5EDA900ED2F86 /* YYMyOrderListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYMyOrderListViewController.m; sourceTree = "<group>"; };
 		67A534BD8D8A4D5D78C35DDB /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		7410D80D1CCB606F00857DD5 /* AlipaySDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AlipaySDK.bundle; sourceTree = "<group>"; };
+		7410D80E1CCB606F00857DD5 /* AlipaySDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AlipaySDK.framework; sourceTree = "<group>"; };
+		7410D80F1CCB606F00857DD5 /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libcrypto.a; sourceTree = "<group>"; };
+		7410D8101CCB606F00857DD5 /* libssl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libssl.a; sourceTree = "<group>"; };
+		7410D81C1CCB7EBD00857DD5 /* background_image_320_480.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background_image_320_480.png; sourceTree = "<group>"; };
+		7410D81D1CCB7EBD00857DD5 /* background_image_640_960.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background_image_640_960.png; sourceTree = "<group>"; };
+		7410D81E1CCB7EBD00857DD5 /* background_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background_image.png; sourceTree = "<group>"; };
+		7410D8221CCB7F5900857DD5 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		7418E5DB1CB8FAB3005F5A74 /* libSocialSina.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libSocialSina.a; sourceTree = "<group>"; };
 		7418E5DC1CB8FAB3005F5A74 /* UMSocialSinaHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMSocialSinaHandler.h; sourceTree = "<group>"; };
 		7418E5DE1CB8FAB3005F5A74 /* libSocialQQ.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libSocialQQ.a; sourceTree = "<group>"; };
@@ -722,11 +738,13 @@
 			files = (
 				7418E6051CB8FAB3005F5A74 /* libSocialQQ.a in Frameworks */,
 				109CE6781CAFC30E003D0172 /* libz.tbd in Frameworks */,
+				7410D8121CCB606F00857DD5 /* AlipaySDK.framework in Frameworks */,
 				74C26A1C1CC9ECCD0062DA96 /* libWeChatSDK.a in Frameworks */,
 				109CE6761CAFC2FE003D0172 /* libstdc++.tbd in Frameworks */,
 				7418E6091CB8FAB3005F5A74 /* libUMSocial_Sdk_4.2.3.a in Frameworks */,
 				7418E6041CB8FAB3005F5A74 /* libSocialSina.a in Frameworks */,
 				109CE6741CAFC2DB003D0172 /* CoreTelephony.framework in Frameworks */,
+				7410D8131CCB606F00857DD5 /* libcrypto.a in Frameworks */,
 				7418E6141CB8FAB3005F5A74 /* libSocialWechat.a in Frameworks */,
 				109CE6721CAFC2CB003D0172 /* libsqlite3.tbd in Frameworks */,
 				109CE6701CAFC29B003D0172 /* CoreGraphics.framework in Frameworks */,
@@ -735,6 +753,7 @@
 				1009420C1CAE11A300560900 /* MessageUI.framework in Frameworks */,
 				7418E60A1CB8FAB3005F5A74 /* libUMSocial_Sdk_Comment_4.2.3.a in Frameworks */,
 				207D09CBD9857E7D8ABC925A /* libPods.a in Frameworks */,
+				7410D8141CCB606F00857DD5 /* libssl.a in Frameworks */,
 				7418E6151CB8FAB3005F5A74 /* libWeChatSDK.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1066,10 +1085,8 @@
 		10CD32AE1CA0CE5800D8A062 /* xinchengShop */ = {
 			isa = PBXGroup;
 			children = (
-				74C26A181CC9ECCD0062DA96 /* libWeChatSDK.a */,
-				74C26A191CC9ECCD0062DA96 /* WechatAuthSDK.h */,
-				74C26A1A1CC9ECCD0062DA96 /* WXApi.h */,
-				74C26A1B1CC9ECCD0062DA96 /* WXApiObject.h */,
+				7410D8151CCB7CE700857DD5 /* Image */,
+				7410D80A1CCB603E00857DD5 /* Pay */,
 				74E58B0B1CB0AB3900895F6D /* Umeng */,
 				74C268B71CC9B94A0062DA96 /* HomePage(首页) */,
 				74C269821CC9B9F30062DA96 /* ShoppingTrolley(购物车) */,
@@ -1423,6 +1440,48 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		7410D80A1CCB603E00857DD5 /* Pay */ = {
+			isa = PBXGroup;
+			children = (
+				7410D80C1CCB606000857DD5 /* Alipay */,
+				7410D80B1CCB604800857DD5 /* WX */,
+			);
+			name = Pay;
+			sourceTree = "<group>";
+		};
+		7410D80B1CCB604800857DD5 /* WX */ = {
+			isa = PBXGroup;
+			children = (
+				74C26A181CC9ECCD0062DA96 /* libWeChatSDK.a */,
+				74C26A191CC9ECCD0062DA96 /* WechatAuthSDK.h */,
+				74C26A1A1CC9ECCD0062DA96 /* WXApi.h */,
+				74C26A1B1CC9ECCD0062DA96 /* WXApiObject.h */,
+			);
+			name = WX;
+			sourceTree = "<group>";
+		};
+		7410D80C1CCB606000857DD5 /* Alipay */ = {
+			isa = PBXGroup;
+			children = (
+				7410D80D1CCB606F00857DD5 /* AlipaySDK.bundle */,
+				7410D80E1CCB606F00857DD5 /* AlipaySDK.framework */,
+				7410D80F1CCB606F00857DD5 /* libcrypto.a */,
+				7410D8101CCB606F00857DD5 /* libssl.a */,
+			);
+			name = Alipay;
+			sourceTree = "<group>";
+		};
+		7410D8151CCB7CE700857DD5 /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				7410D8221CCB7F5900857DD5 /* Default-568h@2x.png */,
+				7410D81C1CCB7EBD00857DD5 /* background_image_320_480.png */,
+				7410D81D1CCB7EBD00857DD5 /* background_image_640_960.png */,
+				7410D81E1CCB7EBD00857DD5 /* background_image.png */,
+			);
+			name = Image;
+			sourceTree = "<group>";
+		};
 		7418E5DA1CB8FAB3005F5A74 /* Sina */ = {
 			isa = PBXGroup;
 			children = (
@@ -1683,13 +1742,13 @@
 		74C26A0E1CC9C4120062DA96 /* Adress */ = {
 			isa = PBXGroup;
 			children = (
+				74C269841CC9B9F30062DA96 /* YYAdressViewController.h */,
+				74C269851CC9B9F30062DA96 /* YYAdressViewController.m */,
+				74C269861CC9B9F30062DA96 /* YYAdressViewController.xib */,
 				74C269941CC9B9F30062DA96 /* YYSelectAddViewController.h */,
 				74C269951CC9B9F30062DA96 /* YYSelectAddViewController.m */,
 				74C269891CC9B9F30062DA96 /* YYChangeAdressViewController.h */,
 				74C2698A1CC9B9F30062DA96 /* YYChangeAdressViewController.m */,
-				74C269841CC9B9F30062DA96 /* YYAdressViewController.h */,
-				74C269851CC9B9F30062DA96 /* YYAdressViewController.m */,
-				74C269861CC9B9F30062DA96 /* YYAdressViewController.xib */,
 				74C269871CC9B9F30062DA96 /* YYAreaViewController.h */,
 				74C269881CC9B9F30062DA96 /* YYAreaViewController.m */,
 				74C2698B1CC9B9F30062DA96 /* YYCityViewController.h */,
@@ -2005,7 +2064,7 @@
 				TargetAttributes = {
 					10CD32AB1CA0CE5800D8A062 = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = P7J6N6L866;
+						DevelopmentTeam = GHPG8279TK;
 					};
 					10CD32C41CA0CE5800D8A062 = {
 						CreatedOnToolsVersion = 7.2;
@@ -2070,11 +2129,13 @@
 				1006B6D81CBC834A003ED9C0 /* YYFocusViewCell.xib in Resources */,
 				74C269681CC9B94A0062DA96 /* YYBuyView.xib in Resources */,
 				74C2695D1CC9B94A0062DA96 /* xc_local_service.png in Resources */,
+				7410D8211CCB7EBD00857DD5 /* background_image.png in Resources */,
 				74C269501CC9B94A0062DA96 /* close_pushbanner.png in Resources */,
 				10CD332B1CA0F20700D8A062 /* YYMine.storyboard in Resources */,
 				74C269F71CC9B9F30062DA96 /* foot_bg.9.png in Resources */,
 				74C269F11CC9B9F30062DA96 /* ccr_ic_repay_result_success.png in Resources */,
 				7418E60D1CB8FAB3005F5A74 /* UMSCommentInputControlleriPad.xib in Resources */,
+				7410D8111CCB606F00857DD5 /* AlipaySDK.bundle in Resources */,
 				74C269511CC9B94A0062DA96 /* default_picture_icon.png in Resources */,
 				74C26A041CC9B9F30062DA96 /* YYHeadView.xib in Resources */,
 				74C2694B1CC9B94A0062DA96 /* anonymous.png in Resources */,
@@ -2084,6 +2145,7 @@
 				74C269F51CC9B9F30062DA96 /* cp_checkbox_on.png in Resources */,
 				74C269631CC9B94A0062DA96 /* xc_w_m.png in Resources */,
 				74C269541CC9B94A0062DA96 /* ic_product_detail_shop_into.png in Resources */,
+				7410D8201CCB7EBD00857DD5 /* background_image_640_960.png in Resources */,
 				74C269521CC9B94A0062DA96 /* ic_arrow_down.png in Resources */,
 				74C269FD1CC9B9F30062DA96 /* top_line_50@2x.png in Resources */,
 				74C269591CC9B94A0062DA96 /* pd_style_release.png in Resources */,
@@ -2107,6 +2169,7 @@
 				74C269F41CC9B9F30062DA96 /* common_ic_radiobox_off.png in Resources */,
 				74C2695C1CC9B94A0062DA96 /* xc_ji_feng.png in Resources */,
 				74C269FC1CC9B9F30062DA96 /* round_plus_press.png in Resources */,
+				7410D81F1CCB7EBD00857DD5 /* background_image_320_480.png in Resources */,
 				7418E6121CB8FAB3005F5A74 /* UMSShareListController.xib in Resources */,
 				74C2694F1CC9B94A0062DA96 /* c_shop_level1.png in Resources */,
 				1006B6EC1CBCE144003ED9C0 /* YYAccountViewCell.xib in Resources */,
@@ -2116,6 +2179,7 @@
 				74C269641CC9B94A0062DA96 /* xc_wei_fang_t_c.png in Resources */,
 				7418E6131CB8FAB3005F5A74 /* UMSocialSDKResourcesNew.bundle in Resources */,
 				74C26A0B1CC9B9F30062DA96 /* YYShoppingDownView.xib in Resources */,
+				7410D8231CCB7F5900857DD5 /* Default-568h@2x.png in Resources */,
 				74C269561CC9B94A0062DA96 /* message_w_meitu_3.png in Resources */,
 				74C269491CC9B94A0062DA96 /* 640*1136.png in Resources */,
 				74C269551CC9B94A0062DA96 /* jshop_sign_icon_shop.png in Resources */,
@@ -2504,6 +2568,8 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/xinchengShop/Umeng/TencentOpenAPI",
+					"$(PROJECT_DIR)/xinchengShop",
+					"$(PROJECT_DIR)/xinchengShop/AlipaySDK",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/xinchengShop/YYxinchengShopApi.pch";
@@ -2536,6 +2602,8 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/xinchengShop/Umeng/TencentOpenAPI",
+					"$(PROJECT_DIR)/xinchengShop",
+					"$(PROJECT_DIR)/xinchengShop/AlipaySDK",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/xinchengShop/YYxinchengShopApi.pch";

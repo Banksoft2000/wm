@@ -26,6 +26,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.title = @"公告";
+    self.view.backgroundColor = [UIColor colorWithPatternImage:DEFA_IMAGE];
 
     [self initTableView];
     [self initData];
@@ -58,6 +61,8 @@
     _tableView = [[YYBaseTableView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT - 64) style:UITableViewStylePlain];
     [self.view addSubview:_tableView];
     
+    _tableView.tableFooterView = [UIView new];
+    
     _tableView.showsVerticalScrollIndicator = NO;
     
     _tableView.dataSource = self;
@@ -68,15 +73,14 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
     return _dataArr.count;
+    
+    
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     static NSString *identy = @"noticeCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identy];
-    
-    _time.text = nil;
-    _text.text = nil;
 
     if (!cell) {
         
@@ -140,6 +144,7 @@
     
     UIViewController *vc = [[UIViewController alloc] init];
     
+    vc.title = @"详 情";
     UIWebView *web = [[UIWebView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT - 64)];
 
     [vc.view addSubview:web];

@@ -23,7 +23,7 @@
 
 
 #define IMGOLLITEMWIDTH 60
-@interface YYDetailViewController ()<UICollectionViewDataSource,UICollectionViewDelegate>
+@interface YYDetailViewController ()
 {
     
     UIWebView *_webView;
@@ -344,10 +344,10 @@
             //拼接订单提交时需要的 属性 名称
             if (standValue.length < 1) {
                 
-                [standIDs appendFormat:@"%@",dic[@"name"]];
+                [standValue appendFormat:@"%@",dic[@"name"]];
             }else {
                 
-                [standIDs appendFormat:@"|%@",dic[@"name"]];
+                [standValue appendFormat:@"|%@",dic[@"name"]];
             }
             
             //规格订单的详情信息

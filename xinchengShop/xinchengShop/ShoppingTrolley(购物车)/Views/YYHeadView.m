@@ -28,8 +28,7 @@
 - (void)setModel:(YYAddressModel *)model {
     
     _model = model;
-    
-    
+  
     if ([_model.userName isEqual:nil]) {
         
         add = [UIButton buttonWithType:UIButtonTypeCustom];
